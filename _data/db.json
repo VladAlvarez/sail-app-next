@@ -1,0 +1,105 @@
+{
+  "details": [
+    {
+      "name": "Vlad",
+      "email": "moroni.v.alvarez@gmail.com",
+      "number": "801-234-0118",
+      "body": "This is a test to see if the fetch and post work. If you are seeing this in a browser it works.",
+      "id": "7bda"
+    },
+    {
+      "id": "05e1",
+      "name": "bfdh",
+      "email": "gfdbf",
+      "number": "898987",
+      "body": "vdsvbjsv"
+    },
+    {
+      "id": "dc27",
+      "name": "test test",
+      "email": "test@gmail.com",
+      "number": "801-123-4567",
+      "body": "third test"
+    },
+    {
+      "id": "3f3c",
+      "name": "test3",
+      "email": "fdsavsfb",
+      "number": "vdbsrbsfdv",
+      "body": "fvdfbndgnbfd"
+    },
+    {
+      "id": "3537",
+      "name": "test for time",
+      "email": "bhjbhv",
+      "number": "bhkbj",
+      "body": "vjgvhbhbj"
+    },
+    {
+      "id": "556f",
+      "name": "vghyj",
+      "email": "fyufty",
+      "number": "dcgy",
+      "body": "fycgbj"
+    },
+    {
+      "id": "a4e1",
+      "name": "test for time",
+      "email": "fndjvsj",
+      "number": "fndjwvbwj",
+      "body": "nvjdkvsd\n"
+    },
+    {
+      "id": "a99a",
+      "name": "test test for time",
+      "email": "vdsbef",
+      "number": "gbfgngf",
+      "body": "vkfrgn",
+      "time": "1:30 PM"
+    },
+    {
+      "id": "6f67",
+      "name": "fbewe",
+      "email": "vwge",
+      "number": "rbeber",
+      "body": "bfewb",
+      "time": "4:00 PM"
+    },
+    {
+      "id": "e93b",
+      "name": "test for date",
+      "email": "gdgs",
+      "number": "brehdr",
+      "body": "bfsbdrre",
+      "time": "11:00 AM",
+      "date": "2024-04-10T06:00:00.000Z"
+    },
+    {
+      "id": "8c03",
+      "name": "testing date 2",
+      "email": "dsbsgb",
+      "number": "bfhdtdrh",
+      "body": "gdshdtndb",
+      "time": "2:00 PM",
+      "date": "2024-04-11T06:00:00.000Z"
+    }
+  ],
+  "logs": [
+    {
+      "date": "07/04/2024",
+      "time": "3hrs 23mins",
+      "speed": "5.7mph",
+      "avgSpeed": "3.5mph",
+      "distance": "20mi",
+      "id": "dbbd"
+    },
+    {
+      "id": "d72e",
+      "date": "03/29/2024",
+      "time": "5hrs 23mins",
+      "speed": "4.3mph",
+      "avgSpeed": "2.2mph",
+      "distance": "15mi"
+    }
+  ]
+}
