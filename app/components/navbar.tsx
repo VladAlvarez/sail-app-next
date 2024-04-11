@@ -17,6 +17,7 @@ export default function Navbar() {
     <Link href="/contact">Contact</Link>
     <Link href="/captains-log">Captain&apos;s Log</Link>
     <Link href="/client-list">Client List</Link>
+    <Link href="/login">Login</Link>
   </nav>
   )
 }

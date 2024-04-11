@@ -38,8 +38,9 @@ export default function CreateLog() {
             <span>Date:</span>
             <input
                 className="w-20"
+                type="date"
+                min="2018-01-01" max="2018-12-31"
                 required
-                type="text"
                 onChange={(e) => setDate(e.target.value)}
                 value={date} 
                 />
