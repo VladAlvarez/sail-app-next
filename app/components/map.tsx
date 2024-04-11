@@ -19,7 +19,7 @@ export default function Map() {
     </Head>
     <ReactMapGL 
         {...viewPort}
-        mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
     >
         markers here
     </ReactMapGL>
