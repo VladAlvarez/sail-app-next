@@ -119,3 +119,7 @@ button {
 button:hover {
   @apply bg-opacity-90
 }
+
+.links{
+  margin: 5px;
+}
