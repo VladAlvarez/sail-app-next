@@ -2,8 +2,8 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Calendar } from "@/components/ui/calendar"
-import { useStateContext } from "../Context";
-
+import { WeatherItemType, useStateContext } from "../Context";
+import WeatherCard from '../components/WeatherCard.tsx'
 
 export default function CreateForm() {
     const router = useRouter()
@@ -66,79 +66,94 @@ export default function CreateForm() {
         return day<new Date();
     }
 
-    const {weather} = useStateContext();
+    const { weather, thisLocation, values } = useStateContext();
     console.log(weather);
     
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
-                <div className="flex flex-col gap-3 items-baseline">
-                    <p className="flex gap-2 items-center">
-                        Select Date
-                    </p>
-                    <Calendar
-                        mode="single"
-                        selected={date}
-                        onSelect={setDate}
-                        disabled={isPastDay}
-                        className="rounded-md border"
+        <div>
+            {
+                (weather).map((weatherItem: WeatherItemType, key: number) => (
+                    <WeatherCard
+                        key={key}
+                        windspeed={weatherItem?.wind?.speed}
+                        humidity={weatherItem?.main?.humidity}
+                        temperature={weatherItem?.main?.temp}
+                        iconString={weatherItem?.weather?.[0]?.description}
+                        conditions={weatherItem?.weather?.[0]?.description}
                     />
+                ))
+            }
+
+            <form onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
+                    <div className="flex flex-col gap-3 items-baseline">
+                        <p className="flex gap-2 items-center">
+                            Select Date
+                        </p>
+                        <Calendar
+                            mode="single"
+                            selected={date}
+                            onSelect={setDate}
+                            disabled={isPastDay}
+                            className="rounded-md border"
+                        />
+                    </div>
+                    <div className="mt-3">
+                        {timeSlot?.map((item, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setSelectedTimeSlot(item.time)}
+                                className={`p-2 border rounded-md cursor-pointer text-center hover:bg-blue-500 hover:text-white w-40 ${item.time==selectedTimeSlot&&'bg-blue-500 text-white'}`}
+                            >
+                                {item.time}
+                            </button>
+                        ))}
+                    </div>
                 </div>
-                <div className="mt-3">
-                    {timeSlot?.map((item, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setSelectedTimeSlot(item.time)}
-                            className={`p-2 border rounded-md cursor-pointer text-center hover:bg-blue-500 hover:text-white w-40 ${item.time==selectedTimeSlot&&'bg-blue-500 text-white'}`}
-                        >
-                            {item.time}
-                        </button>
-                    ))}
-                </div>
-            </div>
-            <label>
-                <span>Name:</span>
-                <input
-                    required
-                    type="text"
-                    onChange={(e) => setName(e.target.value)}
-                    value={name} 
-                />
-            </label>
-            <label>
-                <span>Email:</span>
-                <input
-                    required
-                    type="text"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email} 
-                />
-            </label>
-            <label>
-                <span>Number:</span>
-                <input
-                    required
-                    type="text"
-                    onChange={(e) => setNumber(e.target.value)}
-                    value={number} 
-                />
-            </label>
-            <label>
-                <span>Please share anything that will help prepare four our meeting:</span>
-                <textarea
-                    required
-                    onChange={(e) => setBody(e.target.value)}
-                    value={body} 
-                />
-            </label>
-            <button
-            className="btn-primary"
-            disabled={isSending}
-            >
-                {isSending && <span>Sending...</span>}
-                {!isSending && <span>Schedule Event</span>}
-            </button>
-        </form>
+                <label>
+                    <span>Name:</span>
+                    <input
+                        required
+                        type="text"
+                        onChange={(e) => setName(e.target.value)}
+                        value={name}
+                    />
+                </label>
+                <label>
+                    <span>Email:</span>
+                    <input
+                        required
+                        type="text"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                    />
+                </label>
+                <label>
+                    <span>Number:</span>
+                    <input
+                        required
+                        type="text"
+                        onChange={(e) => setNumber(e.target.value)}
+                        value={number}
+                    />
+                </label>
+                <label>
+                    <span>Please share anything that will help prepare four our meeting:</span>
+                    <textarea
+                        required
+                        onChange={(e) => setBody(e.target.value)}
+                        value={body}
+                    />
+                </label>
+                <button
+                className="btn-primary"
+                disabled={isSending}
+                >
+                    {isSending && <span>Sending...</span>}
+                    {!isSending && <span>Schedule Event</span>}
+                </button>
+            </form>
+        </div>
     )
 }
