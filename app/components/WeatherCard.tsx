@@ -9,13 +9,15 @@ export default function WeatherCard({
   windspeed,
   humidity,
   iconString,
-  conditions
+  conditions,
+  date
 }: {
   temperature: number,
   windspeed: number,
   humidity: number,
   iconString: string,
-  conditions: string
+  conditions: string,
+  date: string
 }) {
 
   const { time } = useDate()
@@ -23,7 +25,7 @@ export default function WeatherCard({
   // set weather card icon
   const renderIcon = () => {
     
-    const iconStyle = "text-4xl"
+    const iconStyle = "text-7xl"
 
     if(iconString) {
       if(iconString.toLowerCase().includes('cloud')) {
@@ -42,22 +44,21 @@ export default function WeatherCard({
         return <WiStrongWind className={iconStyle}/>
       }
     }
-    return <WiDaySunny/>
   }
 
   return (
-    <div className="weatherCard w-[10rem] p-4 flex flex-col text-white">
+    <div className="weatherCard w-[10rem] p-4 flex flex-col text-white gap-4">
       <p className="text-center">
-        {new Date(time).toLocaleTimeString('en', {weekday: 'long'}).split(" ")[0]}
+        {new Date(date).toLocaleTimeString('en', {weekday: 'long'}).split(" ")[0]}
       </p>
       <hr />
       <div className="w-full flex justify-center items-center flex-1">
         {renderIcon()}
       </div>
-      <p className="text-center font-bold">{temperature}&deg;F</p>
-      <p className="text-center font-bold">{windspeed}</p>
-      <p className="text-center font-bold">{humidity}</p>
       <p className="text-center font-bold">{conditions}</p>
+      <p className="text-center font-bold">Temperature: {temperature}&deg;F</p>
+      <p className="text-center font-bold">Wind Speed: {windspeed}mph</p>
+      <p className="text-center font-bold">Humidity:<br/>{humidity}%</p>
     </div>
   )
 }

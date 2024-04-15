@@ -4,7 +4,7 @@ import Logo from './sail-logo.png'
 
 export default function Navbar() {
   return (
-    <nav>
+    <nav className='bg-[#0C3854]'>
       <Image
         src={Logo}
         alt='Sail logo'

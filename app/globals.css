@@ -123,5 +123,5 @@ button:hover {
 
 /* weather card styles */
 .weatherCard {
-  @apply bg-primary rounded-md
+  @apply bg-[#0C3854] rounded-md
 }

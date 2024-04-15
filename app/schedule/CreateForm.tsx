@@ -67,23 +67,25 @@ export default function CreateForm() {
     }
 
     const { weather, thisLocation, values } = useStateContext();
-    console.log(weather);
     
 
     return (
         <div>
-            {
-                (weather).map((weatherItem: WeatherItemType, key: number) => (
-                    <WeatherCard
-                        key={key}
-                        windspeed={weatherItem?.wind?.speed}
-                        humidity={weatherItem?.main?.humidity}
-                        temperature={weatherItem?.main?.temp}
-                        iconString={weatherItem?.weather?.[0]?.description}
-                        conditions={weatherItem?.weather?.[0]?.description}
-                    />
-                ))
-            }
+            <div className="flex gap-2 justify-center">
+                {
+                    (weather).map((weatherItem: WeatherItemType, key: number) => (
+                        <WeatherCard
+                            key={key}
+                            date={weatherItem?.dt_txt}
+                            windspeed={weatherItem?.wind?.speed}
+                            humidity={weatherItem?.main?.humidity}
+                            temperature={weatherItem?.main?.temp}
+                            iconString={weatherItem?.weather?.[0]?.description}
+                            conditions={weatherItem?.weather?.[0]?.description}
+                        />
+                    ))
+                }
+            </div>
 
             <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
