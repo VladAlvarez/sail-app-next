@@ -111,7 +111,7 @@ main nav {
 
 /* scroll stuffz */
 html {
-  scroll-behavior: scroll;
+  scroll-behavior: smooth;
 }
 
 /* button styles */

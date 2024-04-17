@@ -13,9 +13,9 @@ export default function Navbar() {
         placeholder='blur' 
       />
     <Link href="/">Home</Link>
-    <Link href="#first-section">Schedule</Link>
-    <Link href="#third-section">Contact</Link>
-    <Link href="#fourth-section">Captain&apos;s Log</Link>
+    <a href="#first-section">Schedule</a>
+    <a href="#third-section">Contact</a>
+    <a href="#fourth-section">Captain&apos;s Log</a>
     <Link href="/client-list">Client List</Link>
     <Link href="/login">Login</Link>
   </nav>

@@ -25,7 +25,9 @@ export default function Home() {
             <button className="btn-primary text-black">Sail with Us</button>
           </Link>
         </div>
-        <CreateSchedule id="first-section" />
+        <div id="first-section">
+          <CreateSchedule />
+        </div>
         <MeetSkippers />
         <div id="third-section">
           <Contact />
