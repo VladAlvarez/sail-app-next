@@ -1,38 +1,52 @@
-import React, { FormEvent } from 'react';
-import { useRouter } from 'next/navigation'; // Change import
-import { useClient } from 'next/stdlib'; // Add import for useClient
+"use client";
+
+import React, { useState } from 'react';
+import { useRouter } from 'next/router'; 
+import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../firebase/auth';
+import { useAuth } from '../contexts/authContext';
 import GoogleLoginButton from './GoogleLoginButton';
 
-const Login = () => {
-    const { useState } = useClient(); // Use useClient hook
-    const router = useRouter();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+const Login: React.FC = () => {
+    const router = useRouter(); 
+    const { userLoggedIn } = useAuth();
 
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [isSigningIn, setIsSigningIn] = useState<boolean>(false);
+    const [errorMessage, setErrorMessage] = useState<string>('');
+
+    const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Implement your login logic here, such as sending a request to your backend with email and password
-        // Example:
-        const response = await fetch('/api/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: {
-                'Content-Type': 'application/json'
+        if (!isSigningIn) {
+            setIsSigningIn(true);
+            try {
+                await doSignInWithEmailAndPassword(email, password);
+                router.push('/home');
+            } catch (error: any) { 
+                setErrorMessage(error.message || 'An error occurred');
+                setIsSigningIn(false);
             }
-        });
-        const data = await response.json();
-        if (response.ok) {
-            router.push('/dashboard');
-        } else {
-            console.error(data.message);
         }
-        console.log('Form submitted');
-    };
+    }
+    
+    const onGoogleSignIn = async () => {
+        if (!isSigningIn) {
+            setIsSigningIn(true);
+            try {
+                await doSignInWithGoogle();
+                router.push('/home');
+            } catch (error: any) { 
+                setErrorMessage(error.message || 'An error occurred');
+                setIsSigningIn(false);
+            }
+        }
+    }
+
 
     return (
         <div className='justify-center flex items-center m-3'>
             <div className="flex items-center w-full shadow-lg max-w-sm px-6 bg-white py-6 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
-                <form className="space-y-6" onSubmit={handleSubmit}>
+                <form onSubmit={onSubmit} className="space-y-6">
                     <h5 className="text-xl font-medium text-gray-900 dark:text-white">Welcome Back!</h5>
                     <div>
                         <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
@@ -44,11 +58,14 @@ const Login = () => {
                     </div>
                     <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
                     <div className='flex items-center space-x-4 pt-3'>
-                        <GoogleLoginButton />
+                        <GoogleLoginButton onClick={onGoogleSignIn} />
                     </div>
                     <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                         Not registered? <a href="/sign-up" className="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
                     </div>
+                    {errorMessage && (
+                        <span className='text-red-600 font-bold'>{errorMessage}</span>
+                    )}
                 </form>
             </div>
         </div>
@@ -56,3 +73,4 @@ const Login = () => {
 };
 
 export default Login;
+
