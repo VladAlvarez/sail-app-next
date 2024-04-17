@@ -30,6 +30,7 @@ export default function MeetSkippers() {
                                 alt="Random Pirate"
                             />
                         </div>
+                        <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link>
                     </div>
                     <div className="w-1/3 relative" style={{height: "200px"}}>
                         <div className="absolute inset-0">
@@ -40,6 +41,7 @@ export default function MeetSkippers() {
                                 alt="Female Pirate"
                             />
                         </div>
+                        <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link>
                     </div>
                 </div>
             </div>
