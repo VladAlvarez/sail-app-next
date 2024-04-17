@@ -21,10 +21,11 @@ export default function Map() {
         >
     </Script>
     <div className="w-full h-[400px]">
-    {/* @ts-ignore */}
+{/* @ts-ignore */}
         <gmp-map
             center={`${viewPort.latitude}, ${viewPort.longitude}`}
             zoom={viewPort.zoom}>
+{/* @ts-ignore */}
         </gmp-map>
     </div>
     </>

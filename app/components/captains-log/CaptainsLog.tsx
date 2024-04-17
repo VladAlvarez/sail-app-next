@@ -1,6 +1,6 @@
 import CreateLog from "./CreateLog"
 import LogList from "./LogList"
-import Map from "../map"
+import Map from "./map"
 
 export default function CaptainsLog() {
     return (
