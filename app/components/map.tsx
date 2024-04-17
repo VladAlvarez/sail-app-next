@@ -1,8 +1,8 @@
 "use client"
-
-import Head from "next/head"
+import Script from "next/script"
 import { useState } from "react"
-import ReactMapGL from "react-map-gl"
+
+
 
 export default function Map() {
     const [viewPort, setViewPort] = useState({
@@ -14,15 +14,19 @@ export default function Map() {
     })
     return (
     <>
-    <Head>
-        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" />
-    </Head>
-    <ReactMapGL 
-        {...viewPort}
-        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
-    >
-        markers here
-    </ReactMapGL>
+    <Script
+        id="googleMaps"
+        async
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY}&callback=console.debug&libraries=maps,places,marker&v=beta`}
+        >
+    </Script>
+    <div className="w-full h-[400px]">
+    {/* @ts-ignore */}
+        <gmp-map
+            center={`${viewPort.latitude}, ${viewPort.longitude}`}
+            zoom={viewPort.zoom}>
+        </gmp-map>
+    </div>
     </>
   )
 }
