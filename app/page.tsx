@@ -2,6 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import CreateSchedule from "./components/schedule/CreateSchedule";
 import MeetSkippers from "./components/MeetSkippers";
+import Contact from "./components/Contact"; 
+import CaptainsLog from "./components/captains-log/CaptainsLog";
 
 export default function Home() {
   return (
@@ -25,6 +27,12 @@ export default function Home() {
         </div>
         <CreateSchedule id="first-section" />
         <MeetSkippers />
+        <div id="third-section">
+          <Contact />
+        </div>
+        <div id="fourth-section">
+          <CaptainsLog />
+        </div>
     </main>
   );
 }

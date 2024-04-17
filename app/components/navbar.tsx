@@ -14,8 +14,8 @@ export default function Navbar() {
       />
     <Link href="/">Home</Link>
     <Link href="#first-section">Schedule</Link>
-    <Link href="/contact">Contact</Link>
-    <Link href="/captains-log">Captain&apos;s Log</Link>
+    <Link href="#third-section">Contact</Link>
+    <Link href="#fourth-section">Captain&apos;s Log</Link>
     <Link href="/client-list">Client List</Link>
     <Link href="/login">Login</Link>
   </nav>
