@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-
+import CreateSchedule from "./components/schedule/CreateSchedule";
+import MeetSkippers from "./components/MeetSkippers";
 
 export default function Home() {
   return (
@@ -22,6 +23,8 @@ export default function Home() {
             <button className="btn-primary text-black">Sail with Us</button>
           </Link>
         </div>
+        <CreateSchedule id="first-section" />
+        <MeetSkippers />
     </main>
   );
 }

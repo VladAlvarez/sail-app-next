@@ -1,5 +1,5 @@
 import CreateForm from "./CreateForm";
-import { StateContextProvider } from '../Context/index.tsx';
+import { StateContextProvider } from '../../Context';
 
 export default function CreateSchedule() {
     return (

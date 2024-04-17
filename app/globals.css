@@ -109,6 +109,11 @@ main nav {
   @apply border-0;
 }
 
+/* scroll stuffz */
+html {
+  scroll-behavior: scroll;
+}
+
 /* button styles */
 button {
   @apply

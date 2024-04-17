@@ -13,7 +13,7 @@ export default function Navbar() {
         placeholder='blur' 
       />
     <Link href="/">Home</Link>
-    <Link href="/schedule">Schedule</Link>
+    <Link href="#first-section">Schedule</Link>
     <Link href="/contact">Contact</Link>
     <Link href="/captains-log">Captain&apos;s Log</Link>
     <Link href="/client-list">Client List</Link>

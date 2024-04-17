@@ -2,8 +2,8 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Calendar } from "@/components/ui/calendar"
-import { WeatherItemType, useStateContext } from "../Context";
-import WeatherCard from '../components/WeatherCard.tsx'
+import { WeatherItemType, useStateContext } from "../../Context";
+import WeatherCard from '../WeatherCard'
 
 export default function CreateForm() {
     const router = useRouter()
