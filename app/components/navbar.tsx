@@ -7,12 +7,12 @@ export default function Navbar() {
     <nav className="flex items-center justify-between p-3 flex-wrap">
       <div className="flex items-center">
         <Image
-        className='logo'
+          className='logo'
           src={Logo}
           alt='Sail logo'
           width={50}
           quality={100}
-          placeholder='blur' 
+          placeholder='blur'
         />
         <Link className="links" href="/">Home</Link>
         <Link className="links" href="/schedule">Schedule</Link>
