@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Calendar } from "@/components/ui/calendar"
 import { WeatherItemType, useStateContext } from "../../Context";
 import WeatherCard from '../WeatherCard'
+import { CalendarDays, Clock } from "lucide-react";
 
 export default function CreateForm() {
     const router = useRouter()
@@ -90,9 +91,10 @@ export default function CreateForm() {
             <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
                     <div className="flex flex-col gap-3 items-baseline">
-                        <p className="flex gap-2 items-center">
-                            Select Date
-                        </p>
+                        <h2 className="flex gap-2 items-center">
+                            <CalendarDays className="text-blue-500" />
+                            SELECT DATE
+                        </h2>
                         <Calendar
                             mode="single"
                             selected={date}
@@ -101,18 +103,25 @@ export default function CreateForm() {
                             className="rounded-md border"
                         />
                     </div>
-                    <div className="mt-3">
-                        {timeSlot?.map((item, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setSelectedTimeSlot(item.time)}
-                                className={`p-2 border rounded-md cursor-pointer text-center hover:bg-blue-500 hover:text-white w-40 ${item.time==selectedTimeSlot&&'bg-blue-500 text-white'}`}
-                            >
-                                {item.time}
-                            </button>
-                        ))}
+                    <div className="mt-3 md: mt-0">
+                        <h2 className="flex gap-2 items-center mb-3">
+                            <Clock className="text-blue-500" />
+                            SELECT TIME
+                        </h2>
+                        <div className="grid grid-cols-3 gap-2">
+                            {timeSlot?.map((item, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setSelectedTimeSlot(item.time)}
+                                    className={`p-2 border rounded-md cursor-pointer text-center hover:bg-blue-500 hover:text-white w-40 ${item.time==selectedTimeSlot&&'bg-blue-500 text-white'}`}
+                                >
+                                    {item.time}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
+                <h2 className="text-center mt-12 mb-5">ENTER DETAILS</h2>
                 <label>
                     <span>Name:</span>
                     <input
@@ -120,6 +129,7 @@ export default function CreateForm() {
                         type="text"
                         onChange={(e) => setName(e.target.value)}
                         value={name}
+                        className="border-solid border border-slate-300 rounded-md"
                     />
                 </label>
                 <label>
@@ -129,6 +139,7 @@ export default function CreateForm() {
                         type="text"
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
+                        className="border-solid border border-slate-300 rounded-md"
                     />
                 </label>
                 <label>
@@ -138,6 +149,7 @@ export default function CreateForm() {
                         type="text"
                         onChange={(e) => setNumber(e.target.value)}
                         value={number}
+                        className="border-solid border border-slate-300 rounded-md"
                     />
                 </label>
                 <label>
@@ -146,11 +158,12 @@ export default function CreateForm() {
                         required
                         onChange={(e) => setBody(e.target.value)}
                         value={body}
+                        className="border-solid border border-slate-300 rounded-md"
                     />
                 </label>
                 <button
-                className="btn-primary"
-                disabled={isSending}
+                    className="bg-blue-500 text-white rounded-full px-10"
+                    disabled={isSending}
                 >
                     {isSending && <span>Sending...</span>}
                     {!isSending && <span>Schedule Event</span>}

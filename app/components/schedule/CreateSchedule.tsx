@@ -4,8 +4,7 @@ import { StateContextProvider } from '../../Context';
 export default function CreateSchedule() {
     return (
         <StateContextProvider>
-        <main className="bg-white">
-        <h2 className="text-center">ENTER DETAILS</h2>
+        <main className="bg-white py-12">
         <CreateForm />
         </main>
         </StateContextProvider>
