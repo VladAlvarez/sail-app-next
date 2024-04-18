@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
-
+import CreateSchedule from "./components/schedule/CreateSchedule";
+import MeetSkippers from "./components/MeetSkippers";
+import Contact from "./components/Contact"; 
+import CaptainsLog from "./components/captains-log/CaptainsLog";
 
 export default function Home() {
   return (
@@ -17,10 +20,20 @@ export default function Home() {
           <h1 className="text-6xl font-bold">SAIL UTAH LAKE</h1>
         </div>
         
-        <div className="flex justify-center my-8">
+        <div className="flex justify-center mt-12 mb-48">
           <Link href="/schedule">
             <button className="btn-primary text-black">Sail with Us</button>
           </Link>
+        </div>
+        <div id="first-section">
+          <CreateSchedule />
+        </div>
+        <MeetSkippers />
+        <div id="third-section">
+          <Contact />
+        </div>
+        <div id="fourth-section">
+          <CaptainsLog />
         </div>
     </main>
   );

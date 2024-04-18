@@ -74,6 +74,7 @@
     @apply bg-background text-foreground;
   }
 }
+
 /* Base Styles */
 body {
   @apply
@@ -108,6 +109,11 @@ main nav {
   @apply border-0;
 }
 
+/* scroll stuffz */
+html {
+  scroll-behavior: smooth;
+}
+
 /* button styles */
 button {
   @apply
@@ -118,6 +124,21 @@ button {
 
 button:hover {
   @apply bg-opacity-90
+}
+
+/* weather card styles */
+.weatherCard {
+  @apply bg-[#0C3854] rounded-md
+}
+
+/* Meet Skippers Styles */
+.image-container {
+  width: 100%;
+  height: 200px; 
+}
+
+.image-container img {
+  
 }
 
 .links{

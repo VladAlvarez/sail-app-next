@@ -4,8 +4,14 @@ import axios from 'axios';
 
 const StateContext = createContext();
 
+export interface WeatherItemType {
+    windspeed: number;
+    humidity: number;
+    temperature: number;
+  };
+
 export const StateContextProvider = ({ children }) => {
-    const [weather, setWeather] = useState({});
+    const [weather, setWeather] = useState<WeatherItemType[]>([]);
     const [values, setValues] = useState([]);
     const [place, setPlace] = useState('Lindon');
     const [thisLocation, setLocation] = useState('');
@@ -18,7 +24,8 @@ const fetchWeather = async () => {
                 lat: 40.3275,
                 lon: 111.7652,
                 appid: "113484528e97e3c5697cbe60c9d6fc07",
-                q: "Lindon"
+                q: "Lindon",
+                units: "imperial"
             }
         });
 
@@ -35,12 +42,10 @@ const fetchWeather = async () => {
             setWeather(fiveDaysAtMidnight);
         } else {
             console.error('Empty or unexpected response received from the API');
-            // Handle empty or unexpected response
             alert('Failed to fetch weather data. Please try again later.');
         }
     } catch (error) {
         console.error('Error fetching weather data:', error);
-        // Handle errors gracefully
         alert('Failed to fetch weather data. Please try again later.');
     }
 };
@@ -57,6 +62,7 @@ const fetchWeather = async () => {
         <StateContext.Provider value={{
             weather,
             setPlace,
+            values,
             thisLocation,
             place
         }}>
