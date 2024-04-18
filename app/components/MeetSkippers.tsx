@@ -10,38 +10,32 @@ export default function MeetSkippers() {
                     <p className="text-xl pt-3">Each one of our skippers has over 80hrs of sailing experience and is a certified captain by the state. Here’s a chance to get to know them before your voyage.</p>
                 </div>
                 <div className="flex justify-center w-3/5 gap-4">
-                    <div className="w-1/3 relative" style={{height: "200px"}}>
-                        <div className="absolute inset-0">
-                            <Image
-                                src="/captainOne.jpg"
-                                layout="fill"
-                                objectFit="cover"
-                                alt="Captain One"
-                            />
-                        </div>
+                    <div className="w-1/3 relative h-200">
+                        <Image
+                            src="/captainOne.jpg"
+                            layout="fill"
+                            objectFit="cover"
+                            alt="Captain One"
+                        />
                         <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link>
                     </div>
-                    <div className="w-1/3 relative" style={{height: "200px"}}>
-                        <div className="absolute inset-0">
-                            <Image
-                                src="/randoPirate.jpg"
-                                layout="fill"
-                                objectFit="cover"
-                                alt="Random Pirate"
-                            />
-                        </div>
-                        <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link>
+                    <div className="w-1/3 relative h-200">
+                        <Image
+                            src="/randoPirate.jpg"
+                            layout="fill"
+                            objectFit="cover"
+                            alt="Random Pirate"
+                        />
+                        <Link href="/about-vlad" className="absolute bottom-0">Random Pirate</Link>
                     </div>
-                    <div className="w-1/3 relative" style={{height: "200px"}}>
-                        <div className="absolute inset-0">
-                            <Image
-                                src="/femalePirate.jpg"
-                                layout="fill"
-                                objectFit="cover"
-                                alt="Female Pirate"
-                            />
-                        </div>
-                        <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link>
+                    <div className="w-1/3 relative h-200">
+                        <Image
+                            src="/femalePirate.jpg"
+                            layout="fill"
+                            objectFit="cover"
+                            alt="Female Pirate"
+                        />
+                        <Link href="/about-vlad" className="absolute bottom-0">Female Pirate</Link>
                     </div>
                 </div>
             </div>
