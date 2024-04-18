@@ -3,22 +3,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from './sail-logo.png';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useAuth } from '../contexts/authContext';
 import { doSignOut } from '../firebase/auth';
 
 export default function Navbar() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { userLoggedIn } = useAuth();
+
+  const handleSignOut = async () => {
+    await doSignOut();
+    router.push('/login');
+  };
 
   return (
     <nav className="flex items-center justify-between p-3 flex-wrap">
-      {
-        userLoggedIn ?
-        <button onClick={()=> {doSignOut().then(()=> {navigate('/login');})}}></button>
-        :
-        null
-      }
+      {userLoggedIn && (
+        <button onClick={handleSignOut}></button>
+      )}
       <div className="flex items-center">
         <Image
           className='logo'
@@ -27,15 +29,15 @@ export default function Navbar() {
           width={50}
           quality={100}
           placeholder='blur'
-          />
-        <Link className="links" href="/">Home</Link>
-        <Link className="links" href="/schedule">Schedule</Link>
-        <Link className="links" href="/contact">Contact</Link>
-        <Link className="links" href="/captains-log">Captain&apos;s Log</Link>
-        <Link className="links" href="/client-list">Client List</Link>
+        />
+        <Link href="/" className="links">Home</Link>
+        <Link href="/schedule" className="links">Schedule</Link>
+        <Link href="/contact" className="links">Contact</Link>
+        <Link href="/captains-log" className="links">Captain&apos;s Log</Link>
+        <Link href="/client-list" className="links">Client List</Link>
       </div>
       <div>
-        <Link className="links" href="/login">Login</Link>
+        <Link href="/login" className="links">Login</Link>
       </div>
     </nav>
   );
