@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function MeetSkippers() {
     return (
-        <section className="bg-stone-300">
+        <section className="bg-stone-300 py-8">
             <div className="flex flex-wrap justify-between p-10 ">
                 <div className="w-96">
                     <h1 className="text-6xl font-bold">MEET YOUR SKIPPERS</h1>
