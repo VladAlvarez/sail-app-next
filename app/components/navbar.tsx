@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from './sail-logo.png';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useAuth } from '../contexts/authContext';
 import { doSignOut } from '../firebase/auth';
 
