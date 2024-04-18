@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,9 +22,24 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": [
+        "./*"
+      ]
+    },
+    "target": "ES2017"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/contexts/authContext/index.jsx", "app/login/GoogleLoginButton.tsx", "app/login/page.tsx", "app/sign-up/page.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/contexts/authContext/index.jsx",
+    "app/login/GoogleLoginButton.tsx",
+    "app/login/page.tsx",
+    "app/sign-up/page.tsx",
+    "app/login/LoginPage.jsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -1,29 +1,29 @@
-"use client";
+"use client"
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/router'; 
-import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../firebase/auth';
+import { useRouter } from 'next/router';
 import { useAuth } from '../contexts/authContext';
 import GoogleLoginButton from './GoogleLoginButton';
+import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../firebase/auth';
 
-const Login: React.FC = () => {
-    const router = useRouter(); 
+const Login = () => {
+    const router = useRouter();
     const { userLoggedIn } = useAuth();
 
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-    const [isSigningIn, setIsSigningIn] = useState<boolean>(false);
-    const [errorMessage, setErrorMessage] = useState<string>('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isSigningIn, setIsSigningIn] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const onSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         if (!isSigningIn) {
             setIsSigningIn(true);
             try {
                 await doSignInWithEmailAndPassword(email, password);
                 router.push('/home');
-            } catch (error: any) { 
-                setErrorMessage(error.message || 'An error occurred');
+            } catch (error) { 
+                setErrorMessage((error as Error).message || 'An error occurred');
                 setIsSigningIn(false);
             }
         }
@@ -34,14 +34,13 @@ const Login: React.FC = () => {
             setIsSigningIn(true);
             try {
                 await doSignInWithGoogle();
-                router.push('/home');
-            } catch (error: any) { 
-                setErrorMessage(error.message || 'An error occurred');
+                router?.push('/home');
+            } catch (error) { 
+                setErrorMessage((error as Error).message || 'An error occurred');
                 setIsSigningIn(false);
             }
         }
     }
-
 
     return (
         <div className='justify-center flex items-center m-3'>
@@ -73,4 +72,3 @@ const Login: React.FC = () => {
 };
 
 export default Login;
-
