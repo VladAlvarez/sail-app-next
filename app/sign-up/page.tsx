@@ -16,7 +16,7 @@ const Signup: React.FC = () => {
         e.preventDefault();
         try {
             await doCreateUserWithEmailAndPassword(email, password);
-            router.push('/login');
+            router.push('/');
         } catch (error: any) {
             setErrorMessage(error.message);
         }
