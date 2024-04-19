@@ -21,19 +21,19 @@
   ],
   "logs": [
     {
-      "date": "07/04/2024",
-      "time": "3hrs 23mins",
-      "speed": "5.7mph",
-      "avgSpeed": "3.5mph",
-      "distance": "20mi",
-      "id": "dbbd"
+      "id": "fd78",
+      "date": "2024-04-24",
+      "time": "5435",
+      "speed": "643635",
+      "avgSpeed": "7547",
+      "distance": "364375"
     },
     {
-      "id": "d72e",
-      "date": "03/29/2024",
-      "time": "5hrs 23mins",
-      "speed": "4.3mph",
-      "avgSpeed": "2.2mph",
+      "id": "2a1c",
+      "date": "2024-04-09",
+      "time": "3hrs",
+      "speed": "5mph",
+      "avgSpeed": "2.5mph",
       "distance": "15mi"
     }
   ]

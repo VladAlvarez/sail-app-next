@@ -33,58 +33,56 @@ export default function CreateLog() {
     }
     
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex gap-3 items-center mt-5">
         <label>
-            <span>Date:</span>
             <input
-                className="w-20"
+                className="w-32 text-black h-8"
                 type="date"
-                min="2018-01-01" max="2018-12-31"
                 required
                 onChange={(e) => setDate(e.target.value)}
                 value={date} 
                 />
         </label>
         <label>
-            <span>Total Time:</span>
             <input
-                className="w-20"
+                className="w-32 text-black"
                 required
                 type="text"
                 onChange={(e) => setTime(e.target.value)}
                 value={time} 
+                placeholder="Total Time:"
                 />
         </label>
         <label>
-            <span>Top Speed:</span>
             <input
-                className="w-20"
+                className="w-32 text-black"
                 required
                 type="text"
                 onChange={(e) => setSpeed(e.target.value)}
                 value={speed} 
+                placeholder="Top Speed:"
                 />
         </label>
         <label>
-            <span>Avg Speed:</span>
             <input
-                className="w-20"
+                className="w-32 text-black"
                 required
                 onChange={(e) => setAvgSpeed(e.target.value)}
                 value={avgSpeed} 
+                placeholder="Avg Speed:"
                 />
         </label>
         <label>
-            <span>Distance:</span>
             <input
-                className="w-20"
+                className="w-32 text-black"
                 required
                 onChange={(e) => setDistance(e.target.value)}
                 value={distance} 
+                placeholder="Distance:"
             />
         </label>
         <button
-        className="btn-primary inline ml-5"
+        className="btn-primary inline ml-5 text-white h-10 bg-blue-500"
         disabled={isAdding}
         >
             {isAdding && <span>Adding...</span>}
