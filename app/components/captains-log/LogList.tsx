@@ -30,11 +30,11 @@ export default function LogList() {
         <section>
             <div className='mb-20'>
                 {logs.map((log) => (
-                    <div key={log.id} className="card my-5">
-                        <p className='flex gap-2 items-center text-xl'>
+                    <div key={log.id} className="card m-5 flex gap-2 items-center justify-center">
+                        <p className=' text-xl text-black bg-white rounded-md p-2'>
                             {'Date: ' + log.date + ' Time: ' + log.time + ' Top Speed: ' + log.speed + ' Avg. Speed: ' + log.avgSpeed + ' Distance: ' + log.distance}
-                            <button onClick={() => handleDelete(log.id)} className='text-red-600 font-bold'>-</button>
                         </p>
+                            <button onClick={() => handleDelete(log.id)} className='text-red-600 font-bold h-full'>-</button>
                     </div>
                 ))}
                 {logs.length === 0 && (
