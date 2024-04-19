@@ -72,7 +72,7 @@ export default function CreateForm() {
 
     return (
         <div>
-            <div className="flex gap-2 justify-center">
+            <div className="flex flex-wrap gap-2 justify-center">
                 {
                     (weather).map((weatherItem: WeatherItemType, key: number) => (
                         <WeatherCard
@@ -88,7 +88,7 @@ export default function CreateForm() {
                 }
             </div>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="w-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
                     <div className="flex flex-col gap-3 items-baseline">
                         <h2 className="flex gap-2 items-center">
@@ -103,7 +103,7 @@ export default function CreateForm() {
                             className="rounded-md border"
                         />
                     </div>
-                    <div className="mt-3 md: mt-0">
+                    <div className="mt-3 md:mt-0">
                         <h2 className="flex gap-2 items-center mb-3">
                             <Clock className="text-blue-500" />
                             SELECT TIME

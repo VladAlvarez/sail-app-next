@@ -2,7 +2,7 @@ import ClientList from "./ClientList";
 
 export default function CurrentClientList() {
   return (
-    <main>
+    <main className="bg-white">
       <ClientList />
     </main>
   )
