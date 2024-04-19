@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Calendar } from "@/components/ui/calendar"
 import { WeatherItemType, useStateContext } from "../../Context";
 import WeatherCard from '../WeatherCard'
-import { CalendarDays, Clock } from "lucide-react";
+import { CalendarDays, Clock, PencilIcon } from "lucide-react";
 
 export default function CreateForm() {
     const router = useRouter()
@@ -72,24 +72,27 @@ export default function CreateForm() {
 
     return (
         <div>
-            <div className="flex flex-wrap gap-2 justify-center">
-                {
-                    (weather).map((weatherItem: WeatherItemType, key: number) => (
-                        <WeatherCard
-                            key={key}
-                            date={weatherItem?.dt_txt}
-                            windspeed={weatherItem?.wind?.speed}
-                            humidity={weatherItem?.main?.humidity}
-                            temperature={weatherItem?.main?.temp}
-                            iconString={weatherItem?.weather?.[0]?.description}
-                            conditions={weatherItem?.weather?.[0]?.description}
-                        />
-                    ))
-                }
+            <div className="flex flex-col items-center">
+                <h2 className="text-3xl pb-5">Check the weather before you come</h2>
+                <div className="flex flex-wrap gap-2 justify-center pb-10">
+                    {
+                        (weather).map((weatherItem: WeatherItemType, key: number) => (
+                            <WeatherCard
+                                key={key}
+                                date={weatherItem?.dt_txt}
+                                windspeed={weatherItem?.wind?.speed}
+                                humidity={weatherItem?.main?.humidity}
+                                temperature={weatherItem?.main?.temp}
+                                iconString={weatherItem?.weather?.[0]?.description}
+                                conditions={weatherItem?.weather?.[0]?.description}
+                            />
+                        ))
+                    }
+                </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="w-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
+            <form onSubmit={handleSubmit} className="w-32">
+                <div className="flex flex-wrap justify-center md:flex gap-10 mt-5">
                     <div className="flex flex-col gap-3 items-baseline">
                         <h2 className="flex gap-2 items-center">
                             <CalendarDays className="text-blue-500" />
@@ -121,7 +124,9 @@ export default function CreateForm() {
                         </div>
                     </div>
                 </div>
-                <h2 className="text-center mt-12 mb-5">ENTER DETAILS</h2>
+                <h2 className="mt-12 mb-3 flex gap-2 items-center">
+                    <PencilIcon className="text-blue-500"/>
+                    ENTER DETAILS</h2>
                 <label>
                     <span>Name:</span>
                     <input

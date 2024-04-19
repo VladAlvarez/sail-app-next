@@ -47,7 +47,7 @@ export default function WeatherCard({
   }
 
   return (
-    <div className="weatherCard w-[10rem] p-4 flex flex-col text-white gap-4">
+    <div className="weatherCard w-[13rem] p-4 flex flex-col text-white gap-4">
       <p className="text-center">
         {new Date(date).toLocaleTimeString('en', {weekday: 'long'}).split(" ")[0]}
       </p>
