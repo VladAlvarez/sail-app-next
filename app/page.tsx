@@ -5,6 +5,7 @@ import MeetSkippers from "./components/MeetSkippers";
 import Contact from "./components/Contact"; 
 import CaptainsLog from "./components/captains-log/CaptainsLog";
 import Hero from "./components/Hero";
+import Scroll from "./components/Scroll";
 
 export default function Home() {
   return (
@@ -15,16 +16,16 @@ export default function Home() {
       </Head>
 
         <Hero />
-        <div id="first-section">
+        <Scroll id="first-section">
           <CreateSchedule />
-        </div>
+        </Scroll>
         <MeetSkippers />
-        <div id="third-section">
+        <Scroll id="third-section">
           <Contact />
-        </div>
-        <div id="fourth-section">
+        </Scroll>
+        <Scroll id="fourth-section">
           <CaptainsLog />
-        </div>
+        </Scroll>
     </main>
   );
 }

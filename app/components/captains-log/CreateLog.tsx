@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 
-export default function CreateLog() {
+export default function CreateLog({onSubmit}:any) {
     const router = useRouter()
 
     const [date, setDate] = useState('')
@@ -11,6 +11,8 @@ export default function CreateLog() {
     const [speed, setSpeed] = useState('')
     const [avgSpeed, setAvgSpeed] = useState('')
     const [distance, setDistance] = useState('')
+    const [latitude, setLatitude] =useState<string | number>('')
+    const [longitude, setLongitude] =useState<string | number>('')
     const [isAdding, setIsAdding] = useState(false)
   
     const handleSubmit = async (e:any) => {
@@ -18,7 +20,7 @@ export default function CreateLog() {
         setIsAdding(true)
 
         const logs = {
-            date, time, speed, avgSpeed, distance
+            date, time, speed, avgSpeed, distance, latitude, longitude
     }
 
         const res = await fetch('http://localhost:4000/logs', {
@@ -26,9 +28,12 @@ export default function CreateLog() {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(logs)
         })
+        const log = await res.json();
+        
 
         if (res.status === 201) {
-                router.refresh()
+                onSubmit(log)
+                setIsAdding(false)
         }
     }
     
@@ -79,6 +84,26 @@ export default function CreateLog() {
                 onChange={(e) => setDistance(e.target.value)}
                 value={distance} 
                 placeholder="Distance:"
+            />
+        </label>
+        <label>
+            <input
+                className="w-32 text-black"
+                type="number"
+                required
+                onChange={(e) => setLatitude(parseFloat(e.target.value))}
+                value={latitude} 
+                placeholder="Latitude:"
+            />
+        </label>
+        <label>
+            <input
+                className="w-32 text-black"
+                required
+                type="number"
+                onChange={(e) => setLongitude(parseFloat(e.target.value))}
+                value={longitude} 
+                placeholder="Longitude:"
             />
         </label>
         <button

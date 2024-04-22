@@ -30,20 +30,12 @@
   ],
   "logs": [
     {
-      "id": "fd78",
-      "date": "2024-04-24",
-      "time": "5435",
-      "speed": "643635",
-      "avgSpeed": "7547",
-      "distance": "364375"
-    },
-    {
-      "id": "f403",
+      "id": "644d",
       "date": "2024-04-17",
-      "time": "5hrs",
-      "speed": "6mph",
-      "avgSpeed": "3.3mph",
-      "distance": "15mi"
+      "time": "4324",
+      "speed": "532",
+      "avgSpeed": "35",
+      "distance": "54"
     }
   ]
 }

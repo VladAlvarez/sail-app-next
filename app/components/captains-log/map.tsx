@@ -1,10 +1,12 @@
 "use client"
-import Script from "next/script"
-import { useState } from "react"
+import { Loader } from "@googlemaps/js-api-loader"
+import { createRef, useEffect, useState } from "react"
 
 
 
-export default function Map() {
+export default function Map({ logs }:any) {
+    const mapRef = createRef<any>()
+    const [googleMap, setGoogleMap] = useState<any>()
     const [viewPort, setViewPort] = useState({
         latitude: 40.327634,
         longitude: -111.764869,
@@ -12,24 +14,60 @@ export default function Map() {
         height: '500px',
         zoom: 10
     })
+    const initMap = async () => {
+        const loader = new Loader({
+            apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY!,
+            version: "weekly",
+        });
+        console.log(mapRef.current);
+        
+        const { Map } = await loader.importLibrary("maps");
+        const map = new Map(document.getElementById("googleMap"), {
+            zoom: 12,
+            center: {
+                lat: 40.327634,
+                lng: -111.764869
+            },
+            mapId: "12"
+        })
+        setGoogleMap(map)
+        console.log(map)
+    }
+    
+    useEffect(() => {
+        initMap()
+    },[])
+
+    const updateMarkers = async () => {
+        const { google } = window as any;
+        if (!google) return;
+        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+        logs?.forEach((log:any) => {
+            if(log.latitude && log.longitude){
+                const marker = new AdvancedMarkerElement({
+                position: {
+                lat: log.latitude,
+                lng: log.longitude,
+                },
+                map: googleMap,
+                title: new Date().toLocaleTimeString(),
+            });
+            console.log(marker, googleMap);
+            }
+            
+        })
+    }
+
+    useEffect(() => {
+        if (googleMap)
+            updateMarkers()
+    },[googleMap, logs])
+
     return (
-    <>
-    <Script
-        id="googleMaps"
-        async
-        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY}&callback=console.debug&libraries=maps,places,marker&v=beta`}
-        >
-    </Script>
-    <div className="w-full h-[400px]">
-{/* @ts-ignore */}
-        <gmp-map
-            center={`${viewPort.latitude}, ${viewPort.longitude}`}
-            zoom={viewPort.zoom}>
-{/* @ts-ignore */}
-        </gmp-map>
-    </div>
-    </>
+        <div id="googleMap" ref={mapRef} className="w-full h-[400px]"></div>  
   )
 }
+
+
 
 
