@@ -38,7 +38,7 @@ export default function CreateLog({onSubmit}:any) {
     }
     
     return (
-        <form onSubmit={handleSubmit} className="flex gap-3 items-center mt-5">
+        <form onSubmit={handleSubmit} className="flex flex-wrap gap-3 items-center mt-5">
         <label>
             <input
                 className="w-32 text-black h-8"

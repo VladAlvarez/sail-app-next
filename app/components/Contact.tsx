@@ -4,17 +4,22 @@ import Red from "../../public/suzy-red.jpg"
 export default function Contact() {
   return (
     <main className="bg-primary h-full w-full">
-        <div className="flex gap-16">
+        <div className="md:flex gap-16">
             <div>
                 <Image
+                    className="pb-0 mb-0"
                     src={Red}
                     alt='Suzy Red'
                     // width={500}
                     quality={100}
                     placeholder='blur'
+                    // height="100vh"
+                    // objectFit="cover"
+                    // layout="fill"
+                    
                 />
             </div>
-            <div className="text-center text-white">
+            <div className="text-center text-white pb-10 md:pr-10">
                 <h1 className="text-4xl font-bold mt-20">SEE YOU SOON</h1>
                 <h3 className="font-bold mt-20">PHONE NUMBER</h3>
                 <h3>(801) 123-4567</h3>
