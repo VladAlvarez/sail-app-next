@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'; 
 import { useAuth } from '../contexts/authContext';
 import { doSignInWithEmailAndPassword, doSignInWithGoogle, doSignOut } from '../firebase/auth';
 
@@ -27,18 +27,18 @@ const Login = () => {
         }
     };
 
-    const onGoogleSignIn = async () => {
-        if (!isSigningIn) {
-            setIsSigningIn(true);
-            try {
-                await doSignInWithGoogle();
-                router?.push('/');
-            } catch (error) {
-                setErrorMessage(error.message || 'An error occurred');
-                setIsSigningIn(false);
-            }
-        }
-    };
+    // const onGoogleSignIn = async () => {
+    //     if (!isSigningIn) {
+    //         setIsSigningIn(true);
+    //         try {
+    //             await doSignInWithGoogle();
+    //             router.push('/');
+    //         } catch (error) {
+    //             setErrorMessage(error.message || 'An error occurred');
+    //             setIsSigningIn(false);
+    //         }
+    //     }
+    // };
 
     const handleLogout = async () => {
         try {
@@ -51,7 +51,9 @@ const Login = () => {
 
     return (
         <div>
-            {!userLoggedIn && (
+            {userLoggedIn ? (
+                <button onClick={handleLogout}>Logout</button>
+            ) : (
                 <div className='justify-center flex items-center'>
                     <div className="mt-60 flex items-center w-full shadow-lg max-w-sm px-6 bg-white py-6 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
                         <form onSubmit={onSubmit} className="space-y-6">

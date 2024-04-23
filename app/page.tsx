@@ -1,3 +1,5 @@
+"use client"
+
 import Head from "next/head";
 import Link from "next/link";
 import CreateSchedule from "./components/schedule/CreateSchedule";
@@ -8,6 +10,7 @@ import Hero from "./components/Hero";
 import Scroll from "./components/Scroll";
 import React from "react";
 import Navbar from "./components/navbar";
+import { AuthProvider } from "./contexts/authContext";
 
 export default function Home() {
   return (
@@ -16,18 +19,20 @@ export default function Home() {
         <title>Sail Utah</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Navbar /> 
-      <Hero />
-      <Scroll id="first-section">
-        <CreateSchedule />
-      </Scroll>
-      <MeetSkippers />
-      <Scroll id="third-section">
-        <Contact />
-      </Scroll>
-      <Scroll id="fourth-section">
-        <CaptainsLog />
-      </Scroll>
+      <AuthProvider>
+        <Navbar />
+        <Hero />
+        <Scroll id="first-section">
+          <CreateSchedule />
+        </Scroll>
+        <MeetSkippers />
+        <Scroll id="third-section">
+          <Contact />
+        </Scroll>
+        <Scroll id="fourth-section">
+          <CaptainsLog />
+        </Scroll>
+      </AuthProvider>
     </main>
   );
 }
