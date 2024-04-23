@@ -24,7 +24,7 @@ const Signup: React.FC = () => {
 
     return (
         <div className='justify-center flex items-center m-3'>
-            <div className="w-full shadow-lg max-w-sm px-6 bg-white py-6 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
+            <div className="flex items-center w-full shadow-lg max-w-sm px-6 bg-white py-6 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
                 <form onSubmit={onSubmit} className="space-y-6">
                     <h5 className="text-xl font-medium text-gray-900 dark:text-white">Sign Up!</h5>
                     <div>
@@ -37,8 +37,7 @@ const Signup: React.FC = () => {
                     </div>
                     <button type="submit" className="w-full text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create Account</button>
                     <div className='flex items-center space-x-4 pt-3'>
-                        <GoogleLoginButton onClick={() => {}} /> {}
-                        <a href="/login" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login To Your Account</a> 
+                        <a href="/login" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login To Your Account</a>
                     </div>
                     {errorMessage && (
                         <span className='text-red-600 font-bold'>{errorMessage}</span>

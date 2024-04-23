@@ -3,20 +3,19 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../contexts/authContext';
-import GoogleLoginButton from './GoogleLoginButton';
 import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../firebase/auth';
 import { Navigate } from 'react-router-dom';
+import GoogleLoginButton from './GoogleLoginButton';
 
 const Login = () => {
     const router = useRouter();
     const { userLoggedIn } = useAuth({});
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isSigningIn, setIsSigningIn] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
 
-    const onSubmit = async (e: { preventDefault: () => void; }) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         if (!isSigningIn) {
             setIsSigningIn(true);
@@ -24,11 +23,11 @@ const Login = () => {
                 await doSignInWithEmailAndPassword(email, password);
                 router.push('/');
             } catch (error) {
-                setErrorMessage((error as Error).message || 'An error occurred');
+                setErrorMessage(error.message || 'An error occurred');
                 setIsSigningIn(false);
             }
         }
-    }
+    };
 
     const onGoogleSignIn = async () => {
         if (!isSigningIn) {
@@ -37,11 +36,11 @@ const Login = () => {
                 await doSignInWithGoogle();
                 router?.push('/');
             } catch (error) {
-                setErrorMessage((error as Error).message || 'An error occurred');
+                setErrorMessage(error.message || 'An error occurred');
                 setIsSigningIn(false);
             }
         }
-    }
+    };
 
     return (
         <div>
@@ -60,7 +59,7 @@ const Login = () => {
                         </div>
                         <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
                         <div className='flex items-center space-x-4 pt-3'>
-                            <GoogleLoginButton onClick={onGoogleSignIn} />
+                            {/* <GoogleLoginButton onClick={onGoogleSignIn} /> */}
                         </div>
                         <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                             Not registered? <a href="/sign-up" className="text-blue-700 hover:underline dark:text-blue-500">Create account</a>

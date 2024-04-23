@@ -1,10 +1,12 @@
 "use client"
+
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Calendar } from "@/components/ui/calendar"
 import { WeatherItemType, useStateContext } from "../../Context";
 import WeatherCard from '../WeatherCard'
 import { CalendarDays, Clock, PencilIcon } from "lucide-react";
+import emailjs from 'emailjs-com';
 
 export default function CreateForm() {
     const router = useRouter()
@@ -17,11 +19,11 @@ export default function CreateForm() {
     const [timeSlot, setTimeSlot] = useState<{ time: string }[]>([]);
     const [selectedTimeSlot, setSelectedTimeSlot] = useState('')
     const [date, setDate] = useState<Date | undefined>(new Date())
-
+    
     useEffect(() => {
         getTime();
-    },[])
-    
+    }, []);
+
     const getTime = () => {
         const timeList = [];
         for (let i = 10; i <=12; i++) {
@@ -40,35 +42,47 @@ export default function CreateForm() {
                 time: i + ':30 PM'
             })
         }
-        setTimeSlot(timeList)
+        setTimeSlot(timeList);
     }
 
     const handleSubmit = async (e: any) => {
-        e.preventDefault()
-        setIsSending(true)
+        e.preventDefault();
+        setIsSending(true);
 
         const details = {
             name, email, number, body, time: selectedTimeSlot, date
-        }
+        };
+
+        emailjs.send('service_28a13qk', 'service_28a13qk', details, 'i4aO7S9ANfmqafHFH')
+            .then((response) => {
+                console.log('Email sent successfully:', response);
+                setIsSending(false);
+                router.refresh();
+                router.push('/client-list');
+            })
+            .catch((error) => {
+                console.error('Email sending failed:', error);
+                setIsSending(false);
+            });
 
         const res = await fetch('http://localhost:4000/details', {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(details)
-        })
+        });
 
         if (res.status === 201) {
-            router.refresh()
-            router.push('/client-list')
+            router.refresh();
+            router.push('/client-list');
         }
     }
 
     const isPastDay = (day: Date): boolean => {
-        return day<new Date();
+        return day < new Date();
     }
 
-    const { weather, thisLocation, values } = useStateContext();
-    
+    const { weather } = useStateContext();
+
 
     return (
         <div>
