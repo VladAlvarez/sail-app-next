@@ -88,7 +88,7 @@ export default function CreateForm() {
     return (
         <div>
             <div className="flex flex-col items-center w-screen">
-                <h2 className="text-3xl pb-">Check the weather before you come</h2>
+                <h2 className="text-3xl pb-12">Check the weather before you come</h2>
                 <div className="flex flex-wrap gap-2 justify-center pb-10">
                     {
                         (weather).map((weatherItem: WeatherItemType, key: number) => (
@@ -166,7 +166,7 @@ export default function CreateForm() {
                                 className="border-solid border border-slate-300 rounded-md"
                             />
                         </label>
-                        <label>
+                        {/* <label>
                             <span>Number:</span>
                             <input
                                 required
@@ -175,7 +175,7 @@ export default function CreateForm() {
                                 value={number}
                                 className="border-solid border border-slate-300 rounded-md"
                             />
-                        </label>
+                        </label> */}
                         <label>
                             <span>Please share anything that will help prepare four our meeting:</span>
                             <textarea

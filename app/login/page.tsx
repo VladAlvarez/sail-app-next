@@ -7,7 +7,7 @@ import { doSignInWithEmailAndPassword, doSignInWithGoogle, doSignOut } from '../
 
 const Login = () => {
     const router = useRouter();
-    const { userLoggedIn } = useAuth({}); 
+    const { userLoggedIn } = useAuth( {} ); 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isSigningIn, setIsSigningIn] = useState(false);

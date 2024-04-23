@@ -26,6 +26,15 @@
       "body": "shoop",
       "time": "1:00 PM",
       "date": "2024-04-27T06:00:00.000Z"
+    },
+    {
+      "id": "c8f4",
+      "name": "dfsgh",
+      "email": "KyeClevenger@gmail.com",
+      "number": "",
+      "body": "fdsgfdhagjfshryheagjrshaehgrsh",
+      "time": "",
+      "date": "2024-04-23T21:01:10.563Z"
     }
   ],
   "logs": [
@@ -36,6 +45,16 @@
       "speed": "532",
       "avgSpeed": "35",
       "distance": "54"
+    },
+    {
+      "id": "3f40",
+      "date": "2024-05-01",
+      "time": "dsafs",
+      "speed": "dsaf",
+      "avgSpeed": "dsaf",
+      "distance": "dsfads",
+      "latitude": 7,
+      "longitude": 7
     }
   ]
 }

@@ -1,3 +1,5 @@
+"use client"
+
 import CreateForm from "./CreateForm";
 import { StateContextProvider } from '../../Context';
 import React from "react";
