@@ -1,5 +1,5 @@
 import CreateForm from "./CreateForm";
-import { StateContextProvider } from '../../Context';
+import { StateContextProvider } from "@/app/Context";
 
 export default function CreateSchedule() {
     return (
