@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '../contexts/authContext';
+import { useAuth } from '../firebase/auth';
 import GoogleLoginButton from './GoogleLoginButton';
 import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../firebase/auth';
 import { Navigate } from 'react-router-dom';
