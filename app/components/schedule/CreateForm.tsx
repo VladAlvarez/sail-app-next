@@ -88,7 +88,7 @@ export default function CreateForm() {
     return (
         <div>
             <div className="flex flex-col items-center w-screen">
-                <h2 className="text-3xl pb-5 ">Check the weather before you come</h2>
+                <h2 className="text-3xl pb-8">Check the weather before you come</h2>
                 <div className="flex flex-wrap gap-2 justify-center pb-10">
                     {
                         (weather).map((weatherItem: WeatherItemType, key: number) => (
@@ -107,8 +107,9 @@ export default function CreateForm() {
             </div>
 
             <form onSubmit={handleSubmit} className="w-32">
-                <div className="flex flex-wrap justify-center md:flex gap-10 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div className="flex flex-col gap-3 items-baseline">
+                <div className=" mb-12 flex flex-wrap justify-center md:flex gap-10 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700
+                transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300">
+                    <div className="flex flex-col gap-3 items-baseline ">
                         <h2 className="flex gap-2 items-center">
                             <CalendarDays className="text-blue-500" />
                             SELECT DATE
@@ -139,7 +140,8 @@ export default function CreateForm() {
                         </div>
                     </div>
                 </div>
-                <div className="gap-3 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <div className="gap-3 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700
+                transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300">
                     <div className="text-center items-center flex justify-center flex-col">
                         <h2 className="mt-6 mb-3 flex gap-2 items-center">
                             <PencilIcon className="text-blue-500" />

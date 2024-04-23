@@ -161,3 +161,8 @@ form select {
 form button {
   @apply block mx-auto;
 }
+
+*{
+  margin: 0;
+  padding: 0;
+}
