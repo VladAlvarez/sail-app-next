@@ -2,14 +2,14 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '../firebase/auth';
+import { useAuth } from '../contexts/authContext';
 import GoogleLoginButton from './GoogleLoginButton';
 import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../firebase/auth';
 import { Navigate } from 'react-router-dom';
 
 const Login = () => {
     const router = useRouter();
-    const { userLoggedIn } = useAuth();
+    const { userLoggedIn } = useAuth({});
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
