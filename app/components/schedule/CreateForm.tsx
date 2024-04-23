@@ -7,6 +7,7 @@ import { WeatherItemType, useStateContext } from "../../Context";
 import WeatherCard from '../WeatherCard'
 import { CalendarDays, Clock, PencilIcon } from "lucide-react";
 import emailjs from 'emailjs-com';
+import React from "react";
 
 export default function CreateForm() {
     const router = useRouter()
@@ -19,14 +20,14 @@ export default function CreateForm() {
     const [timeSlot, setTimeSlot] = useState<{ time: string }[]>([]);
     const [selectedTimeSlot, setSelectedTimeSlot] = useState('')
     const [date, setDate] = useState<Date | undefined>(new Date())
-    
+
     useEffect(() => {
         getTime();
     }, []);
 
     const getTime = () => {
         const timeList = [];
-        for (let i = 10; i <=12; i++) {
+        for (let i = 10; i <= 12; i++) {
             timeList.push({
                 time: i + ':00 AM'
             })
@@ -34,7 +35,7 @@ export default function CreateForm() {
                 time: i + ':30 AM'
             })
         }
-        for (let i = 1; i <=6; i++) {
+        for (let i = 1; i <= 6; i++) {
             timeList.push({
                 time: i + ':00 PM'
             })
@@ -67,7 +68,7 @@ export default function CreateForm() {
 
         const res = await fetch('http://localhost:4000/details', {
             method: "POST",
-            headers: {"Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(details)
         });
 
@@ -86,8 +87,8 @@ export default function CreateForm() {
 
     return (
         <div>
-            <div className="flex flex-col items-center">
-                <h2 className="text-3xl pb-5">Check the weather before you come</h2>
+            <div className="flex flex-col items-center w-screen">
+                <h2 className="text-3xl pb-5 ">Check the weather before you come</h2>
                 <div className="flex flex-wrap gap-2 justify-center pb-10">
                     {
                         (weather).map((weatherItem: WeatherItemType, key: number) => (
@@ -106,7 +107,7 @@ export default function CreateForm() {
             </div>
 
             <form onSubmit={handleSubmit} className="w-32">
-                <div className="flex flex-wrap justify-center md:flex gap-10 mt-5">
+                <div className="flex flex-wrap justify-center md:flex gap-10 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div className="flex flex-col gap-3 items-baseline">
                         <h2 className="flex gap-2 items-center">
                             <CalendarDays className="text-blue-500" />
@@ -130,7 +131,7 @@ export default function CreateForm() {
                                 <button
                                     key={index}
                                     onClick={() => setSelectedTimeSlot(item.time)}
-                                    className={`p-2 border rounded-md cursor-pointer text-center hover:bg-blue-500 hover:text-white w-40 ${item.time==selectedTimeSlot&&'bg-blue-500 text-white'}`}
+                                    className={`p-2 border rounded-md cursor-pointer text-center hover:bg-blue-500 hover:text-white w-40 ${item.time == selectedTimeSlot && 'bg-blue-500 text-white'}`}
                                 >
                                     {item.time}
                                 </button>
@@ -138,56 +139,60 @@ export default function CreateForm() {
                         </div>
                     </div>
                 </div>
-                <h2 className="mt-12 mb-3 flex gap-2 items-center">
-                    <PencilIcon className="text-blue-500"/>
-                    ENTER DETAILS</h2>
-                <label>
-                    <span>Name:</span>
-                    <input
-                        required
-                        type="text"
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                        className="border-solid border border-slate-300 rounded-md"
-                    />
-                </label>
-                <label>
-                    <span>Email:</span>
-                    <input
-                        required
-                        type="text"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                        className="border-solid border border-slate-300 rounded-md"
-                    />
-                </label>
-                <label>
-                    <span>Number:</span>
-                    <input
-                        required
-                        type="text"
-                        onChange={(e) => setNumber(e.target.value)}
-                        value={number}
-                        className="border-solid border border-slate-300 rounded-md"
-                    />
-                </label>
-                <label>
-                    <span>Please share anything that will help prepare four our meeting:</span>
-                    <textarea
-                        required
-                        onChange={(e) => setBody(e.target.value)}
-                        value={body}
-                        className="border-solid border border-slate-300 rounded-md"
-                    />
-                </label>
-                <button
-                    className="bg-blue-500 text-white rounded-full px-10"
-                    disabled={isSending}
-                >
-                    {isSending && <span>Sending...</span>}
-                    {!isSending && <span>Schedule Event</span>}
-                </button>
+                <div className="gap-3 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div className="text-center items-center flex justify-center flex-col">
+                        <h2 className="mt-6 mb-3 flex gap-2 items-center">
+                            <PencilIcon className="text-blue-500" />
+                            ENTER DETAILS</h2>
+                        <label>
+                            <span>Name:</span>
+                            <input
+                                required
+                                type="text"
+                                onChange={(e) => setName(e.target.value)}
+                                value={name}
+                                className="border-solid border border-slate-300 rounded-md "
+                            />
+                        </label>
+                        <label>
+                            <span>Email:</span>
+                            <input
+                                required
+                                type="text"
+                                onChange={(e) => setEmail(e.target.value)}
+                                value={email}
+                                className="border-solid border border-slate-300 rounded-md"
+                            />
+                        </label>
+                        <label>
+                            <span>Number:</span>
+                            <input
+                                required
+                                type="text"
+                                onChange={(e) => setNumber(e.target.value)}
+                                value={number}
+                                className="border-solid border border-slate-300 rounded-md"
+                            />
+                        </label>
+                        <label>
+                            <span>Please share anything that will help prepare four our meeting:</span>
+                            <textarea
+                                required
+                                onChange={(e) => setBody(e.target.value)}
+                                value={body}
+                                className="border-solid border border-slate-300 rounded-md"
+                            />
+                        </label>
+                        <button
+                            className="bg-blue-500 text-white rounded-full px-10 shadow-2xl py-2 mt-5"
+                            disabled={isSending}
+                        >
+                            {isSending && <span>Sending...</span>}
+                            {!isSending && <span>Schedule Event</span>}
+                        </button>
+                    </div>
+                </div>
             </form>
-        </div>
+        </div >
     )
 }

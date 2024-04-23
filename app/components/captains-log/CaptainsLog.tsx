@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import CreateLog from "./CreateLog"
 import LogList from "./LogList"
 import Map from "./map"
+import React from "react";
 
 async function getLogs() {
     const res = await fetch('http://localhost:4000/logs');
