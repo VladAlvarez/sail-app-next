@@ -23,8 +23,8 @@ const Signup: React.FC = () => {
     }
 
     return (
-        <div className='justify-center flex items-center m-3'>
-            <div className="flex items-center w-full shadow-lg max-w-sm px-6 bg-white py-6 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
+        <div className='justify-center flex items-center'>
+            <div className="mt-60 flex items-center w-full shadow-lg max-w-sm px-6 bg-white py-6 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
                 <form onSubmit={onSubmit} className="space-y-6">
                     <h5 className="text-xl font-medium text-gray-900 dark:text-white">Sign Up!</h5>
                     <div>

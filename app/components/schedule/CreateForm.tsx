@@ -88,7 +88,7 @@ export default function CreateForm() {
     return (
         <div>
             <div className="flex flex-col items-center w-screen">
-                <h2 className="text-3xl pb-8">Check the weather before you come</h2>
+                <h2 className="text-3xl pb-">Check the weather before you come</h2>
                 <div className="flex flex-wrap gap-2 justify-center pb-10">
                     {
                         (weather).map((weatherItem: WeatherItemType, key: number) => (
