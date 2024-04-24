@@ -27,18 +27,18 @@ const Login = () => {
         }
     };
 
-    // const onGoogleSignIn = async () => {
-    //     if (!isSigningIn) {
-    //         setIsSigningIn(true);
-    //         try {
-    //             await doSignInWithGoogle();
-    //             router.push('/');
-    //         } catch (error) {
-    //             setErrorMessage(error.message || 'An error occurred');
-    //             setIsSigningIn(false);
-    //         }
-    //     }
-    // };
+    const onGoogleSignIn = async () => {
+        if (!isSigningIn) {
+            setIsSigningIn(true);
+            try {
+                await doSignInWithGoogle();
+                router.push('/');
+            } catch (error) {
+                setErrorMessage(error.message || 'An error occurred');
+                setIsSigningIn(false);
+            }
+        }
+    };
 
     const handleLogout = async () => {
         try {

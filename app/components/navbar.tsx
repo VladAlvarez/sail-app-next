@@ -25,9 +25,9 @@ export default function Navbar() {
       {userLoggedIn ? (
         <>
           <Link href="/client-list">Client List</Link>
-          <div className="user-info">
-            <p>Hello, {email}</p>
+          <div className="user-info flex">
             <button className='btn-primary' onClick={logout}>Logout</button>
+            <p className="ml-3">Hello, {email}</p>
           </div>
         </>
       ) : (

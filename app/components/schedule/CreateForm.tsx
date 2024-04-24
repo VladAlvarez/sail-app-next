@@ -166,7 +166,7 @@ export default function CreateForm() {
                                 className="border-solid border border-slate-300 rounded-md"
                             />
                         </label>
-                        {/* <label>
+                        <label>
                             <span>Number:</span>
                             <input
                                 required
@@ -175,7 +175,7 @@ export default function CreateForm() {
                                 value={number}
                                 className="border-solid border border-slate-300 rounded-md"
                             />
-                        </label> */}
+                        </label>
                         <label>
                             <span>Please share anything that will help prepare four our meeting:</span>
                             <textarea
