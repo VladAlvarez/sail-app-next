@@ -127,7 +127,7 @@ export default function CreateForm() {
                             <Clock className="text-blue-500" />
                             SELECT TIME
                         </h2>
-                        <div className="grid grid-cols-3 gap-2">
+                        <div className="grid grid-cols-3 gap-2 w-full overflow-hidden">
                             {timeSlot?.map((item, index) => (
                                 <button
                                     key={index}

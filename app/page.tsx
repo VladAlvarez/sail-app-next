@@ -14,7 +14,7 @@ import { AuthProvider } from "./contexts/authContext";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-dvw">
       <Head>
         <title>Sail Utah</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

@@ -1,8 +1,7 @@
 "use client"
 import { auth } from "./firebase";
-import firebase from "firebase/compat/app";
 
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword} from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signInWithRedirect} from "firebase/auth";
 
 export const doCreateUserWithEmailAndPassword = async (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -14,7 +13,7 @@ export const doSignInWithEmailAndPassword = async (email, password) => {
 
 export const doSignInWithGoogle = () => {
     const provider = new GoogleAuthProvider(); 
-    return firebase.auth().signInWithRedirect(provider);
+    return signInWithPopup(auth, provider);
 };
 
 export const doSignOut = () => {

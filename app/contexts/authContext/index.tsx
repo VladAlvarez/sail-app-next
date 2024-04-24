@@ -1,16 +1,19 @@
 "use client"
 
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { auth } from "../../firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
-const AuthContext = React.createContext({});
+export const AuthContext = React.createContext<{
+    currentUser?: any, 
+    userLoggedIn?: any,
+    loading?: boolean
+}>({});
 
-export function useAuth() {
-    return useContext(AuthContext);
-}
 
-export function AuthProvider({ children}) {
+
+
+export function AuthProvider({ children}:any) {
     const [currentUser, setCurrentUser ] = useState(null);
     const [userLoggedIn, setUserLoggedIn ] = useState(false);
     const [loading, setLoading] = useState(true); 
@@ -20,7 +23,9 @@ export function AuthProvider({ children}) {
         return unsubscribe;
     }, [])
 
-    async function initializeUser(user) {
+    async function initializeUser(user:any) {
+        console.log(user);
+        
         if (user) {
             setCurrentUser({...user});
             setUserLoggedIn(true);
@@ -31,14 +36,12 @@ export function AuthProvider({ children}) {
         setLoading(false);
     }
     
-    const value = {
-        currentUser, 
-        userLoggedIn,
-        loading
-    }
-    
     return (
-        <AuthContext.Provider value={value}>
+        <AuthContext.Provider value={
+            {currentUser, 
+            userLoggedIn,
+            loading}
+        }>
             {!loading && children}
         </AuthContext.Provider>
     )

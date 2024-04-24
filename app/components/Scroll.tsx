@@ -18,6 +18,6 @@ export default function Scroll({ children, id }: any) {
     },[divRef, id, hash])
 
     return (
-        <div id={id} ref={divRef}>{children}</div>
+        <div id={id} ref={divRef} className="scroll-mt-[98px]">{children}</div>
     )
 }
