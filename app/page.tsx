@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import CaptainsLog from "./components/captains-log/CaptainsLog";
 import Hero from "./components/Hero";
 import Scroll from "./components/Scroll";
+import React from "react";
 
 export default function Home() {
   return (

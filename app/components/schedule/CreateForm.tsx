@@ -5,6 +5,7 @@ import { Calendar } from "@/components/ui/calendar"
 import { WeatherItemType, useStateContext } from "../../Context";
 import WeatherCard from '../WeatherCard'
 import { CalendarDays, Clock, PencilIcon } from "lucide-react";
+import React from "react";
 
 export default function CreateForm() {
     const router = useRouter()

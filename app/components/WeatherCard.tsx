@@ -1,4 +1,5 @@
 "use client"
+import React from 'react'
 import { useDate } from '../Utils/useDate'
 import '../globals.css'
 import { WiDaySunny, WiCloudy, WiShowers, WiStormShowers, WiStrongWind, WiSnow, WiFog } from 'react-icons/wi'

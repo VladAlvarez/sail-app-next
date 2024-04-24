@@ -5,6 +5,10 @@ import axios from 'axios';
 const StateContext = createContext();
 
 export interface WeatherItemType {
+    dt_txt: string;
+    wind: any;
+    main: any;
+    weather: any;
     windspeed: number;
     humidity: number;
     temperature: number;

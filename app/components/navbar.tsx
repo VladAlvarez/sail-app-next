@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image  from "next/image";
 import Logo from './sail-logo.png'
+import React from 'react';
 
 export default function Navbar() {
   return (

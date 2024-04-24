@@ -4,6 +4,7 @@ import "./globals.css";
 
 // My Components
 import Navbar from "./components/navbar";
+import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 

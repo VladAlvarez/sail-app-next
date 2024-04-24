@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Red from "../../public/suzy-red.jpg"
+import React from "react"
 
 export default function Contact() {
   return (
