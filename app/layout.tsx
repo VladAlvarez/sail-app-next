@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-// My Components
 import Navbar from "./components/navbar";
 import React from "react";
 

@@ -1,8 +1,9 @@
 
 "use client"
 import { createRef, useEffect } from "react"
-import useHash from "@/app/Utils/useHash"
+import { useHash } from "../Utils/useHash"
 import React from "react"
+
 
 export default function Scroll({ children, id }: any) {
     const divRef = createRef<any>()

@@ -115,7 +115,7 @@ html {
 }
 
 /* button styles */
-button {
+.sailButton {
   @apply
   px-3 py-2
   rounded-md bg-white
@@ -160,4 +160,9 @@ form select {
 }
 form button {
   @apply block mx-auto;
+}
+
+*{
+  margin: 0;
+  padding: 0;
 }

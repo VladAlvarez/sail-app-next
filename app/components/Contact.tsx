@@ -4,11 +4,11 @@ import React from "react"
 
 export default function Contact() {
   return (
-    <main className="bg-primary h-full w-full">
+    <main className="bg-primary h-full w-full	">
         <div className="md:flex gap-16">
             <div>
                 <Image
-                    className="pb-0 mb-0"
+                    className="pb-0 mb-0 border-8 border-primary"
                     src={Red}
                     alt='Suzy Red'
                     // width={500}
@@ -17,7 +17,6 @@ export default function Contact() {
                     // height="100vh"
                     // objectFit="cover"
                     // layout="fill"
-                    
                 />
             </div>
             <div className="text-center text-white pb-10 md:pr-10">

@@ -12,7 +12,7 @@ export default function MeetSkippers() {
                 </div>
                 <div className="flex justify-center w-3/5 gap-4">
                     <div className="w-1/3 relative" style={{height: "200px"}}>
-                        <div className="absolute inset-0">
+                        <div className="absolute inset-0 shadow-inner border-4 shadow-2xl  transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300">
                             <Image
                                 src="/captainOne.jpg"
                                 layout="fill"
@@ -20,10 +20,10 @@ export default function MeetSkippers() {
                                 alt="Captain One"
                             />
                         </div>
-                        <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link>
+                        {/* <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link> */}
                     </div>
                     <div className="w-1/3 relative" style={{height: "200px"}}>
-                        <div className="absolute inset-0">
+                        <div className="absolute inset-0 shadow-inner border-4 shadow-2xl  transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300">
                             <Image
                                 src="/randoPirate.jpg"
                                 layout="fill"
@@ -31,10 +31,10 @@ export default function MeetSkippers() {
                                 alt="Random Pirate"
                             />
                         </div>
-                        <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link>
+                        {/* <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link> */}
                     </div>
                     <div className="w-1/3 relative" style={{height: "200px"}}>
-                        <div className="absolute inset-0">
+                        <div className="absolute inset-0 shadow-inner border-4 shadow-2xl  transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300">
                             <Image
                                 src="/femalePirate.jpg"
                                 layout="fill"
@@ -42,7 +42,7 @@ export default function MeetSkippers() {
                                 alt="Female Pirate"
                             />
                         </div>
-                        <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link>
+                        {/* <Link href="/about-vlad" className="absolute bottom-0">Captain One</Link> */}
                     </div>
                 </div>
             </div>
