@@ -1,6 +1,5 @@
 'use client'
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 async function getClient() {
     const res = await fetch('http://localhost:4000/details')
@@ -15,6 +14,7 @@ async function deleteClient(id) {
 
 export default function ClientList() {
     const [clients, setClients] = useState([]);
+    const [signUpSuccess, setSignUpSuccess] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -22,7 +22,13 @@ export default function ClientList() {
         })();
     }, []);
 
-    const formatDate = (isoDate: any) => {
+    useEffect(() => {
+        if (signUpSuccess) {
+            alert('Sign up successful!');
+        }
+    }, [signUpSuccess]);
+
+    const formatDate = (isoDate) => {
         const date = new Date(isoDate);
         return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     }
@@ -33,18 +39,18 @@ export default function ClientList() {
     }
 
     return (
-        <section className='mt-60 pt-3'>
+        <section className='pt-32 p-12'>
             {clients.map((client: any) => (
                 <div key={client.id} className="card">
                     <p>
-                        <div className='flex flex-col p-1'>
+                        <div className='flex flex-col content-around flex-wrap text-center p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-3'>
                             {client.name + ' ' +
                                 client.email + ' ' +
                                 client.number + ' ' +
                                 client.body + ' ' +
                                 client.time + ' ' +
                                 formatDate(client.date)}
-                            <button onClick={() => handleDelete(client.id)}>Delete</button>
+                            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleDelete(client.id)}>Delete</button>
                         </div>
                     </p>
                 </div>
@@ -52,8 +58,6 @@ export default function ClientList() {
             {clients.length === 0 && (
                 <p className="text-center">There are no clients</p>
             )}
-            </section>
-            );
+        </section>
+    );
 }
-
-

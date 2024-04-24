@@ -58,8 +58,7 @@ export default function CreateForm() {
             .then((response) => {
                 console.log('Email sent successfully:', response);
                 setIsSending(false);
-                router.refresh();
-                router.push('/client-list');
+                alert('Sign up successful!');
             })
             .catch((error) => {
                 console.error('Email sending failed:', error);
@@ -73,10 +72,11 @@ export default function CreateForm() {
         });
 
         if (res.status === 201) {
-            router.refresh();
-            router.push('/client-list');
+            setIsSending(false);
+            alert('Sign up successful!');
         }
     }
+
 
     const isPastDay = (day: Date): boolean => {
         return day < new Date();
@@ -166,7 +166,7 @@ export default function CreateForm() {
                                 className="border-solid border border-slate-300 rounded-md"
                             />
                         </label>
-                        {/* <label>
+                        <label>
                             <span>Number:</span>
                             <input
                                 required
@@ -175,7 +175,7 @@ export default function CreateForm() {
                                 value={number}
                                 className="border-solid border border-slate-300 rounded-md"
                             />
-                        </label> */}
+                        </label>
                         <label>
                             <span>Please share anything that will help prepare four our meeting:</span>
                             <textarea
@@ -186,12 +186,13 @@ export default function CreateForm() {
                             />
                         </label>
                         <button
+                            onClick={handleSubmit} 
                             className="bg-blue-500 text-white rounded-full px-10 shadow-2xl py-2 mt-5"
                             disabled={isSending}
                         >
-                            {isSending && <span>Sending...</span>}
-                            {!isSending && <span>Schedule Event</span>}
+                            {isSending ? <span>Sending...</span> : <span>Schedule Event</span>}
                         </button>
+
                     </div>
                 </div>
             </form>
