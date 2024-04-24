@@ -1,4 +1,5 @@
 'use client'
+import React from 'react';
 import { useEffect, useState } from 'react';
 
 async function getClient() {
@@ -32,25 +33,27 @@ export default function ClientList() {
     }
 
     return (
-        <>
+        <section className='mt-60 pt-3'>
             {clients.map((client: any) => (
-                <div key={client.id} className="card my-5">
+                <div key={client.id} className="card">
                     <p>
-                        {client.name + ' ' +
-                            client.email + ' ' +
-                            client.number + ' ' +
-                            client.body + ' ' +
-                            client.time + ' ' +
-                            formatDate(client.date)}
-                        <button onClick={() => handleDelete(client.id)}>Delete</button>
+                        <div className='flex flex-col p-1'>
+                            {client.name + ' ' +
+                                client.email + ' ' +
+                                client.number + ' ' +
+                                client.body + ' ' +
+                                client.time + ' ' +
+                                formatDate(client.date)}
+                            <button onClick={() => handleDelete(client.id)}>Delete</button>
+                        </div>
                     </p>
                 </div>
             ))}
             {clients.length === 0 && (
                 <p className="text-center">There are no clients</p>
             )}
-        </>
-    );
+            </section>
+            );
 }
 
 

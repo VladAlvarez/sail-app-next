@@ -115,7 +115,7 @@ html {
 }
 
 /* button styles */
-button {
+.sailButton {
   @apply
   px-3 py-2
   rounded-md bg-white

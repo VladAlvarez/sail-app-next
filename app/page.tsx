@@ -21,9 +21,10 @@ export default function Home() {
       </Head>
       <AuthProvider>
         <Navbar />
+      </AuthProvider>
         <Hero />
         <Scroll id="first-section">
-          <CreateSchedule />
+        <CreateSchedule />
         </Scroll>
         <MeetSkippers />
         <Scroll id="third-section">
@@ -32,7 +33,6 @@ export default function Home() {
         <Scroll id="fourth-section">
           <CaptainsLog />
         </Scroll>
-      </AuthProvider>
     </main>
   );
 }

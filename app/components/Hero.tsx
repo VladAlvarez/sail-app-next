@@ -13,7 +13,7 @@ export default function Hero() {
             
             <div className="flex justify-center mt-12 mb-48">
               <Link href="#first-section">
-                <button className="btn-primary text-black ">Sail with Us</button>
+                <button className="btn-primary text-black sailButton">Sail with Us</button>
               </Link>
             </div>
         </section>
