@@ -82,27 +82,29 @@ export default function CreateForm() {
         return day < new Date();
     }
 
-    const { weather } = useStateContext();
+    const { weather }:any = useStateContext();
 
 
     return (
         <div>
             <div className="flex flex-col items-center w-screen">
                 <h2 className="md:text-3xl md:pb-12 text-xl pb-5">Check the weather before you come</h2>
-                <div className="flex flex-wrap gap-2 justify-center pb-10">
-                    {
-                        (weather).map((weatherItem: WeatherItemType, key: number) => (
-                            <WeatherCard
-                                key={key}
-                                date={weatherItem?.dt_txt}
-                                windspeed={weatherItem?.wind?.speed}
-                                humidity={weatherItem?.main?.humidity}
-                                temperature={weatherItem?.main?.temp}
-                                iconString={weatherItem?.weather?.[0]?.description}
-                                conditions={weatherItem?.weather?.[0]?.description}
-                            />
-                        ))
-                    }
+                <div className="flex overflow-x-scroll">
+                    <div className="flex md:flex-wrap flex-nowrap gap-2 justify-center pb-10">
+                        {
+                            (weather).map((weatherItem: WeatherItemType, key: number) => (
+                                <WeatherCard
+                                    key={key}
+                                    date={weatherItem?.dt_txt}
+                                    windspeed={weatherItem?.wind?.speed}
+                                    humidity={weatherItem?.main?.humidity}
+                                    temperature={weatherItem?.main?.temp}
+                                    iconString={weatherItem?.weather?.[0]?.description}
+                                    conditions={weatherItem?.weather?.[0]?.description}
+                                />
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
 
