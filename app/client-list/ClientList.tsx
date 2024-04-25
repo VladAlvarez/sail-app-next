@@ -39,11 +39,12 @@ export default function ClientList() {
     }
 
     return (
-        <section className='pt-32 p-12'>
+        <section className='pt-32 p-12 h-screen'>
             {clients.map((client: any) => (
                 <div key={client.id} className="card">
                     <p>
-                        <div className='flex flex-col content-around flex-wrap text-center p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-3'>
+                        <div className='flex flex-col content-around flex-wrap text-center p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-3
+                         transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300 p-3'>
                             {client.name + ' ' +
                                 client.email + ' ' +
                                 client.number + ' ' +
