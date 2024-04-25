@@ -20,7 +20,6 @@ export default function Map({ logs }:any) {
             apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY!,
             version: "weekly",
         });
-        console.log(mapRef.current);
         
         const { Map } = await loader.importLibrary("maps");
         const map = new Map(document.getElementById("googleMap"), {
@@ -32,7 +31,6 @@ export default function Map({ logs }:any) {
             mapId: "12"
         })
         setGoogleMap(map)
-        console.log(map)
     }
     
     useEffect(() => {
@@ -53,9 +51,7 @@ export default function Map({ logs }:any) {
                 map: googleMap,
                 title: new Date().toLocaleTimeString(),
             });
-            console.log(marker, googleMap);
-            }
-            
+            }        
         })
     }
 

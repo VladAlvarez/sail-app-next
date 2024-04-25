@@ -32,15 +32,11 @@ const fetchWeather = async () => {
                 units: "imperial"
             }
         });
-
-        // Log the entire response data object to the console
-        console.log('Response:', response.data);
         
         if (response && response.data && response.data.city && response.data.list) {
             const fiveDaysAtMidnight = response.data.list.filter(
                 currentTimeForecast => currentTimeForecast.dt_txt.includes('00:00:00')
             )
-            console.log('fiveDay:', fiveDaysAtMidnight);
             // Update state with the location and forecast data
             setLocation(response.data.city.name);
             setWeather(fiveDaysAtMidnight);
