@@ -3,14 +3,21 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from './sail-logo.png';
-import { AuthContext} from '../contexts/authContext';
+import { AuthContext } from '../contexts/authContext';
 import React, { useContext } from "react";
 import { doSignOut } from '../firebase/auth';
+import router from 'next/router';
 
 export default function Navbar() {
-  const {currentUser, userLoggedIn } = useContext(AuthContext); 
-  
+  const { currentUser, userLoggedIn } = useContext(AuthContext);
 
+  const handleLogout = async () => {
+    try {
+        await doSignOut(router.push);
+    } catch (error) {
+        console.error('Error logging out:', error);
+    }
+};
   return (
     <nav className='bg-[#0C3854] fixed w-dvw p-2 z-10 border-2 shadow-lg flex justify-between md:justify-start '>
       <Image
@@ -25,7 +32,7 @@ export default function Navbar() {
         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
-    </button>
+      </button>
       <div className='hidden md:flex gap-5 items-center flex-grow'>
         <a href="/">Home</a>
         <a href="/#first-section">Schedule</a>
@@ -35,7 +42,7 @@ export default function Navbar() {
           <>
             <Link href="/client-list">Client List</Link>
             <div className="user-info flex gap-5 flex-grow justify-between mr-5">
-              <button className='btn-primary' onClick={doSignOut}>Logout</button>
+              <button className='btn-primary' onClick={handleLogout}>Logout</button>
               <p>Hello, {currentUser?.email}</p>
             </div>
           </>

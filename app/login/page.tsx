@@ -40,11 +40,12 @@ const Login = () => {
             }
         }
     };
-
+    
     const handleLogout = async () => {
         try {
-            await doSignOut();
-            router.push('/login');
+            await doSignOut(() => {
+                window.location.href = '/login'; 
+            });
         } catch (error) {
             console.error('Error logging out:', error);
         }

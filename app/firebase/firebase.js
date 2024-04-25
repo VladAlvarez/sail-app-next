@@ -18,7 +18,12 @@ const auth = getAuth(app);
 export { auth };
 
 export const doCreateUserWithEmailAndPassword = async (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        return userCredential;
+    } catch (error) {
+        throw error; 
+    }
 };
 
 export const doSignInWithEmailAndPassword = async (email, password) => {
@@ -31,6 +36,11 @@ export const doSignInWithGoogle = async () => {
     return result;
 };
 
-export const doSignOut = () => {
-    return signOut(auth);
+export const doSignOut = async (redirectFunction) => {
+    try {
+        await auth.signOut();
+        redirectFunction('/login');
+    } catch (error) {
+        console.error('Error signing out:', error);
+    }
 };
