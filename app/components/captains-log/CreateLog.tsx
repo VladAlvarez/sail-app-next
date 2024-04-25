@@ -39,10 +39,10 @@ export default function CreateLog({onSubmit}:any) {
     }
     
     return (
-        <form onSubmit={handleSubmit} className="flex flex-wrap gap-3 items-center mt-5">
+        <form onSubmit={handleSubmit} className="md:flex flex-wrap md:gap-3 items-center mt-5 grid">
         <label>
             <input
-                className="w-32 text-black h-8"
+                className="md:w-32 w-64 text-black h-8"
                 type="date"
                 required
                 onChange={(e) => setDate(e.target.value)}
@@ -51,7 +51,7 @@ export default function CreateLog({onSubmit}:any) {
         </label>
         <label>
             <input
-                className="w-32 text-black"
+                className="md:w-32 w-64 text-black"
                 required
                 type="text"
                 onChange={(e) => setTime(e.target.value)}
@@ -61,7 +61,7 @@ export default function CreateLog({onSubmit}:any) {
         </label>
         <label>
             <input
-                className="w-32 text-black"
+                className="md:w-32 w-64 text-black"
                 required
                 type="text"
                 onChange={(e) => setSpeed(e.target.value)}
@@ -71,7 +71,7 @@ export default function CreateLog({onSubmit}:any) {
         </label>
         <label>
             <input
-                className="w-32 text-black"
+                className="md:w-32 w-64 text-black"
                 required
                 onChange={(e) => setAvgSpeed(e.target.value)}
                 value={avgSpeed} 
@@ -80,7 +80,7 @@ export default function CreateLog({onSubmit}:any) {
         </label>
         <label>
             <input
-                className="w-32 text-black"
+                className="md:w-32 w-64 text-black"
                 required
                 onChange={(e) => setDistance(e.target.value)}
                 value={distance} 
@@ -89,7 +89,7 @@ export default function CreateLog({onSubmit}:any) {
         </label>
         <label>
             <input
-                className="w-32 text-black"
+                className="md:w-32 w-64 text-black"
                 type="number"
                 required
                 onChange={(e) => setLatitude(parseFloat(e.target.value))}
@@ -99,7 +99,7 @@ export default function CreateLog({onSubmit}:any) {
         </label>
         <label>
             <input
-                className="w-32 text-black"
+                className="md:w-32 w-64 text-black"
                 required
                 type="number"
                 onChange={(e) => setLongitude(parseFloat(e.target.value))}
@@ -108,7 +108,7 @@ export default function CreateLog({onSubmit}:any) {
             />
         </label>
         <button
-        className="btn-primary inline ml-5 text-white h-10 bg-blue-500"
+        className="btn-primary inline md:ml-5 text-white h-10 bg-blue-500 md:p-2 rounded-md px-12 "
         disabled={isAdding}
         >
             {isAdding && <span>Adding...</span>}

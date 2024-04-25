@@ -88,7 +88,7 @@ export default function CreateForm() {
     return (
         <div>
             <div className="flex flex-col items-center w-screen">
-                <h2 className="text-3xl pb-12">Check the weather before you come</h2>
+                <h2 className="md:text-3xl md:pb-12 text-xl pb-5">Check the weather before you come</h2>
                 <div className="flex flex-wrap gap-2 justify-center pb-10">
                     {
                         (weather).map((weatherItem: WeatherItemType, key: number) => (
@@ -127,12 +127,12 @@ export default function CreateForm() {
                             <Clock className="text-blue-500" />
                             SELECT TIME
                         </h2>
-                        <div className="grid grid-cols-3 gap-2 w-full overflow-hidden">
+                        <div className="grid grid-cols-3 gap-3 md:gap-2 w-full overflow-hidden">
                             {timeSlot?.map((item, index) => (
                                 <button
                                     key={index}
                                     onClick={() => setSelectedTimeSlot(item.time)}
-                                    className={`p-2 border rounded-md cursor-pointer text-center hover:bg-blue-500 hover:text-white w-40 ${item.time == selectedTimeSlot && 'bg-blue-500 text-white'}`}
+                                    className={`w-20 py-2 md:p-2 border rounded-md cursor-pointer text-center hover:bg-blue-500 hover:text-white md:w-40 ${item.time == selectedTimeSlot && 'bg-blue-500 text-white'}`}
                                 >
                                     {item.time}
                                 </button>
@@ -142,7 +142,7 @@ export default function CreateForm() {
                 </div>
                 <div className="gap-3 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700
                 transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300">
-                    <div className="text-center items-center flex justify-center flex-col">
+                    <div className="text-center md:items-center flex justify-center flex-col">
                         <h2 className="mt-6 mb-3 flex gap-2 items-center">
                             <PencilIcon className="text-blue-500" />
                             ENTER DETAILS</h2>
@@ -160,22 +160,22 @@ export default function CreateForm() {
                             <span>Email:</span>
                             <input
                                 required
-                                type="text"
+                                type="email"
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
                                 className="border-solid border border-slate-300 rounded-md"
                             />
                         </label>
-                        {/* <label>
+                        <label>
                             <span>Number:</span>
                             <input
                                 required
-                                type="text"
+                                type="tel"
                                 onChange={(e) => setNumber(e.target.value)}
                                 value={number}
                                 className="border-solid border border-slate-300 rounded-md"
                             />
-                        </label> */}
+                        </label>
                         <label>
                             <span>Please share anything that will help prepare four our meeting:</span>
                             <textarea

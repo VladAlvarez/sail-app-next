@@ -21,7 +21,7 @@ export default function Contact() {
             </div>
             <div className="text-center text-white pb-10 md:pr-10">
                 <h1 className="text-4xl font-bold mt-20">SEE YOU SOON</h1>
-                <h3 className="font-bold mt-20">PHONE NUMBER</h3>
+                <h3 className="font-bold md:mt-20 mt-10">PHONE NUMBER</h3>
                 <h3>(801) 123-4567</h3>
                 <h3 className="font-bold mt-10">EMAIL ADDRESS</h3>
                 <h3>hello@reallygreatsite.com</h3>
