@@ -6,11 +6,14 @@ import Logo from './sail-logo.png';
 import { AuthContext } from '../contexts/authContext';
 import React, { useContext, useState } from "react";
 import { doSignOut } from '../firebase/firebase';
-import router from 'next/router';
+import { useRouter } from 'next/navigation';
+
 
 export default function Navbar() {
   const { currentUser, userLoggedIn } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+
 
   const handleLogout = async () => {
     try {

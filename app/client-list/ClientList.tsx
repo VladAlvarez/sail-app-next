@@ -33,12 +33,12 @@ export default function ClientList() {
     }
 
     return (
-        <div className='pt-32 p-12 h-full'>
+        <div className='pt-32 p-12 h-screen  '>
         {clients.map((client: any) => (
             <div key={client.id} className="card">
                 <p>
                     <div className='flex flex-col content-around flex-wrap text-center p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-3
-                     transition ease-in-out  hover:scale-105 duration-300'>
+                    transition ease-in-out  hover:scale-105 duration-300'>
                         {client.name + ' ' +
                             client.email + ' ' +
                             client.number + ' ' +
@@ -51,7 +51,7 @@ export default function ClientList() {
             </div>
         ))}
         {clients.length === 0 && (
-            <p className="text-center h-screen pt-32 p-12 ">There are no clients</p>
+            <p className="text-center h-screen  pt-32 p-12 ">There are no clients</p>
         )}
     </div>
             );
