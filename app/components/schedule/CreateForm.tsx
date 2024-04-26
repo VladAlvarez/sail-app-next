@@ -49,7 +49,7 @@ export default function CreateForm() {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         setIsSending(true);
-    
+
         const details = {
             name,
             email,
@@ -58,14 +58,14 @@ export default function CreateForm() {
             time: selectedTimeSlot,
             date
         };
-    
+
         try {
             const res = await fetch('http://localhost:4000/details', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(details)
             });
-    
+
             if (res.status === 201) {
                 setIsSending(false);
                 alert('Form submitted successfully!');
@@ -73,7 +73,7 @@ export default function CreateForm() {
             } else {
                 throw new Error('Failed to submit form data');
             }
-            
+
             const message = `Scheduled Event Details:
                 Name: ${name}
                 Email: ${email}
@@ -82,34 +82,34 @@ export default function CreateForm() {
                 Time: ${selectedTimeSlot}
                 Comments: ${body}
             `;
-    
+
             const emailDetails = {
                 ...details,
                 message: message
             };
-    
+
             await emailjs.send('service_28a13qk', 'template_0wz373w', emailDetails, 'i4aO7S9ANfmqafHFH');
         } catch (error) {
             console.error('Error submitting form:', error);
             setIsSending(false);
         }
     };
-    
-    
+
+
 
     const isPastDay = (day: Date): boolean => {
         return day < new Date();
     }
 
-    const { weather }:any = useStateContext();
+    const { weather }: any = useStateContext();
 
 
     return (
         <div>
             <div className="flex flex-col items-center w-screen">
                 <h2 className="md:text-3xl md:pb-12 text-xl pb-5">Check the weather before you come</h2>
-                <div className="flex overflow-x-scroll">
-                    <div className="flex md:flex-wrap flex-nowrap gap-2 justify-center pb-10">
+                <div className="md:justify-center screen-lg mx-auto flex overflow-x-auto max-w-full md:max-w-full md:w-screen px-4">
+                    <div className="flex md:flex-wrap no-wrap md:max-w-full gap-2 justify-center pb-10">
                         {
                             (weather).map((weatherItem: WeatherItemType, key: number) => (
                                 <WeatherCard
@@ -126,7 +126,6 @@ export default function CreateForm() {
                     </div>
                 </div>
             </div>
-
             <form onSubmit={handleSubmit} className="w-32">
                 <div className=" mb-12 flex flex-wrap justify-center md:flex gap-10 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700
                 transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300">

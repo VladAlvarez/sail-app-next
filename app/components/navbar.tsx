@@ -14,7 +14,7 @@ export default function Navbar() {
   const handleLogout = async () => {
     try {
       await doSignOut();
-      router.push('/login'); // Redirect to login page after logout
+      router.push('/login');
     } catch (error) {
       console.error('Error logging out:', error);
     }

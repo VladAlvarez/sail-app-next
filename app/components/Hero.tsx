@@ -11,7 +11,7 @@ export default function Hero() {
               <h1 className="text-4xl md:text-6xl font-bold">SAIL UTAH LAKE</h1>
             </div>
             
-            <div className="flex justify-center mt-12 mb-48">
+            <div className="flex justify-center mt-12 mb-64">
               <Link href="#first-section">
                 <button className="btn-primary text-black sailButton">Sail with Us</button>
               </Link>

@@ -1,31 +1,13 @@
 {
   "details": [
     {
-      "id": "47ec",
+      "id": "ffc5",
       "name": "Kye",
       "email": "KyeClevenger@gmail.com",
-      "number": "dfewg",
-      "body": "fewgr",
-      "time": "12:00 AM",
-      "date": "2024-04-26T06:00:00.000Z"
-    },
-    {
-      "id": "26a8",
-      "name": "Quinn",
-      "email": "quinnclevenger@gmail.com",
-      "number": "3853136883",
-      "body": "yooooooo",
-      "time": "6:30 PM",
-      "date": "2024-04-26T06:00:00.000Z"
-    },
-    {
-      "id": "9d7e",
-      "name": "mom",
-      "email": "jenniferaclevenger@gmail.com",
-      "number": "3853136883",
-      "body": "loves",
-      "time": "1:30 PM",
-      "date": "2024-04-25T20:25:14.867Z"
+      "number": "safaef",
+      "body": "fegwrewrgwefrgwegr",
+      "time": "12:30 AM",
+      "date": "2024-04-30T06:00:00.000Z"
     }
   ],
   "logs": [
@@ -38,6 +20,26 @@
       "distance": "dsfads",
       "latitude": 7,
       "longitude": 7
+    },
+    {
+      "id": "fe82",
+      "date": "2024-04-30",
+      "time": "wqfew",
+      "speed": "wdqfew",
+      "avgSpeed": "wqre",
+      "distance": "wqfew",
+      "latitude": 54,
+      "longitude": 5465
+    },
+    {
+      "id": "f7d0",
+      "date": "2024-04-30",
+      "time": "wqfew",
+      "speed": "wdqfew",
+      "avgSpeed": "wqre",
+      "distance": "wqfew",
+      "latitude": 41,
+      "longitude": -111
     }
   ]
 }

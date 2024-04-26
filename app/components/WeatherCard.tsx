@@ -48,7 +48,7 @@ export default function WeatherCard({
   }
 
   return (
-    <div className="weatherCard w-[13rem] p-4 flex flex-col text-white gap-4 transition ease-in-out bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 m-3 duration-300">
+    <div className="weatherCard w-[13rem] p-4 flex flex-col text-white gap-4 transition ease-in-out bg-blue-500  hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 m-3 duration-300 hover:rounded-md">
       <p className="text-center">
         {new Date(date).toLocaleTimeString('en', {weekday: 'long'}).split(" ")[0]}
       </p>
