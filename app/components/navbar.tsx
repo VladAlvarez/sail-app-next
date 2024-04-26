@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Logo from './sail-logo.png';
 import { AuthContext } from '../contexts/authContext';
 import React, { useContext } from "react";
-import { doSignOut } from '../firebase/auth';
+import { doSignOut } from '../firebase/firebase';
 import router from 'next/router';
 
 export default function Navbar() {
@@ -13,11 +13,13 @@ export default function Navbar() {
 
   const handleLogout = async () => {
     try {
-        await doSignOut(router.push);
+      await doSignOut();
+      router.push('/login'); // Redirect to login page after logout
     } catch (error) {
-        console.error('Error logging out:', error);
+      console.error('Error logging out:', error);
     }
-};
+  };
+
   return (
     <nav className='bg-[#0C3854] fixed w-dvw p-2 z-10 border-2 shadow-lg flex justify-between md:justify-start '>
       <Image

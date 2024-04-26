@@ -33,26 +33,27 @@ export default function ClientList() {
     }
 
     return (
-        <section className='mt-60 pt-3'>
-            {clients.map((client: any) => (
-                <div key={client.id} className="card">
-                    <p>
-                        <div className='flex flex-col p-1'>
-                            {client.name + ' ' +
-                                client.email + ' ' +
-                                client.number + ' ' +
-                                client.body + ' ' +
-                                client.time + ' ' +
-                                formatDate(client.date)}
-                            <button onClick={() => handleDelete(client.id)}>Delete</button>
-                        </div>
-                    </p>
-                </div>
-            ))}
-            {clients.length === 0 && (
-                <p className="text-center">There are no clients</p>
-            )}
-            </section>
+        <div className='pt-32 p-12 h-full'>
+        {clients.map((client: any) => (
+            <div key={client.id} className="card">
+                <p>
+                    <div className='flex flex-col content-around flex-wrap text-center p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-3
+                     transition ease-in-out  hover:scale-105 duration-300'>
+                        {client.name + ' ' +
+                            client.email + ' ' +
+                            client.number + ' ' +
+                            client.body + ' ' +
+                            client.time + ' ' +
+                            formatDate(client.date)}
+                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleDelete(client.id)}>Delete</button>
+                    </div>
+                </p>
+            </div>
+        ))}
+        {clients.length === 0 && (
+            <p className="text-center h-screen pt-32 p-12 ">There are no clients</p>
+        )}
+    </div>
             );
 }
 

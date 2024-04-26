@@ -49,34 +49,53 @@ export default function CreateForm() {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         setIsSending(true);
-
+    
         const details = {
-            name, email, number, body, time: selectedTimeSlot, date
+            name,
+            email,
+            number,
+            body,
+            time: selectedTimeSlot,
+            date
         };
-
-        emailjs.send('service_28a13qk', 'service_28a13qk', details, 'i4aO7S9ANfmqafHFH')
-            .then((response) => {
-                console.log('Email sent successfully:', response);
-                setIsSending(false);
-                router.refresh();
-                router.push('/client-list');
-            })
-            .catch((error) => {
-                console.error('Email sending failed:', error);
-                setIsSending(false);
+    
+        try {
+            const res = await fetch('http://localhost:4000/details', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(details)
             });
-
-        const res = await fetch('http://localhost:4000/details', {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(details)
-        });
-
-        if (res.status === 201) {
-            router.refresh();
-            router.push('/client-list');
+    
+            if (res.status === 201) {
+                setIsSending(false);
+                alert('Form submitted successfully!');
+                router.push('/');
+            } else {
+                throw new Error('Failed to submit form data');
+            }
+            
+            const message = `Scheduled Event Details:
+                Name: ${name}
+                Email: ${email}
+                Phone Number: ${number}
+                Date: ${date?.toLocaleDateString()}
+                Time: ${selectedTimeSlot}
+                Comments: ${body}
+            `;
+    
+            const emailDetails = {
+                ...details,
+                message: message
+            };
+    
+            await emailjs.send('service_28a13qk', 'template_0wz373w', emailDetails, 'i4aO7S9ANfmqafHFH');
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setIsSending(false);
         }
-    }
+    };
+    
+    
 
     const isPastDay = (day: Date): boolean => {
         return day < new Date();
