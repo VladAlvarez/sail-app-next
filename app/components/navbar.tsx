@@ -46,11 +46,11 @@ export default function Navbar() {
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
       </button>
-      <div className={`md:flex md:items-start md:border-0 border-t-0 border-2 gap-8 items-center flex-grow absolute top-[5.5rem] left-0 bg-[#0C3854] w-screen md:w-auto md:static md:flex-row md:gap-5 p-3 md:p-0 ${isMenuOpen ? 'block' : 'hidden'}`}>
+      <div className={`md:flex md:items-start md:border-0 shadow-2xl border-t-0 border-2 gap-8 items-center flex-grow absolute top-[5.75rem] left-0  bg-[#0C3854] w-full md:w-auto md:static md:flex-row md:gap-5 p-3 md:p-0 ${isMenuOpen ? 'block' : 'hidden'}`}>
         <a href="/" className="block md:inline-block">Home</a>
         <a href="/#first-section" className="block md:inline-block">Schedule</a>
         <a href="/#third-section" className="block md:inline-block">Contact</a>
-        <a href="/#fourth-section" className="block md:inline-block">Captain&apos;s Log</a>
+        <a href="/#fourth-section" className="block md:inline-block">Captain&apos;s Log</a>                        
         {userLoggedIn ? (
           <>
             <Link href="/client-list" className="block md:inline-block">Client List</Link>

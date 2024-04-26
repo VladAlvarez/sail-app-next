@@ -108,7 +108,7 @@ export default function CreateLog({onSubmit}:any) {
             />
         </label>
         <button
-        className="btn-primary inline md:ml-5 text-white h-10 bg-blue-500 md:p-2 rounded-md px-12 "
+        className="text-white font-bold h-[44px]text-center p-2 bg-blue-500 rounded-lg w-10 text-center "
         disabled={isAdding}
         >
             {isAdding && <span>Adding...</span>}

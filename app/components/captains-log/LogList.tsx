@@ -11,7 +11,7 @@ export default function LogList({logs, handleDelete}:any) {
                         <p className=' text-xl text-black bg-white rounded-md p-2'>
                             {'Date: ' + log.date + ' Time: ' + log.time + ' Top Speed: ' + log.speed + ' Avg. Speed: ' + log.avgSpeed + ' Distance: ' + log.distance}
                         </p>
-                            <button onClick={() => handleDelete(log.id)} className='text-red-600 font-bold h-[44px] p-2 bg-white rounded-md'>-</button>
+                            <button onClick={() => handleDelete(log.id)} className='text-white font-bold h-[44px]text-center p-2 bg-red-600 rounded-lg w-10 text-center'>-</button>
                     </div>
                 ))}
                 {logs.length === 0 && (
