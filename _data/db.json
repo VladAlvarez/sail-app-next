@@ -1,5 +1,15 @@
 {
-  "details": [],
+  "details": [
+    {
+      "id": "936b",
+      "name": "Kye",
+      "email": "KyeClevenger@gmail.com",
+      "number": "3853136883",
+      "body": "Yuhhhh",
+      "time": "2:00 PM",
+      "date": "2024-04-30T06:00:00.000Z"
+    }
+  ],
   "logs": [
     {
       "id": "3f40",
