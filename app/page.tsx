@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className="w-dvw">
       <Head>
-        <title>Sail Utah</title>
+        <title>Sail App Vlad Kye</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <AuthProvider>
