@@ -8,19 +8,18 @@
       "body": "Yuhhhh",
       "time": "2:00 PM",
       "date": "2024-04-30T06:00:00.000Z"
+    },
+    {
+      "id": "a420",
+      "name": "Shane",
+      "email": "shanemclevenger@gmail.com",
+      "number": "38383838",
+      "body": "test",
+      "time": "12:00 AM",
+      "date": "2024-04-29T06:00:00.000Z"
     }
   ],
   "logs": [
-    {
-      "id": "3f40",
-      "date": "2024-05-01",
-      "time": "dsafs",
-      "speed": "dsaf",
-      "avgSpeed": "dsaf",
-      "distance": "dsfads",
-      "latitude": 7,
-      "longitude": 7
-    },
     {
       "id": "fe82",
       "date": "2024-04-30",
