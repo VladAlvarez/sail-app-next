@@ -61,7 +61,7 @@ export default function Map({ logs }:any) {
     },[googleMap, logs])
 
     return (
-        <div id="googleMap" ref={mapRef} className="w-11/12 h-[500px]"></div>  
+        <div id="googleMap" ref={mapRef} className="w-11/12 h-[500px] shadow-lg border-4 border-white"></div>  
   )
 }
 
