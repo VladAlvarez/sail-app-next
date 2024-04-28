@@ -31,6 +31,7 @@ export default function Navbar() {
   return (
     <nav className='bg-[#0C3854] fixed w-full p-2 z-10 md:border-b-2 border-2 shadow-lg flex justify-between md:justify-start '>
       <Image
+      className='rounded-xl p-1 bg-[rgb(215,250,251)] object-fill w-16 h-24'
         src={Logo}
         alt='Sail logo'
         width={50}
@@ -49,7 +50,7 @@ export default function Navbar() {
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
       </button>
-      <div className={`md:flex md:items-start md:border-0 shadow-2xl border-t-0 border-2 gap-8 items-center flex-grow absolute top-[5.75rem] left-0  bg-[#0C3854] w-full md:w-auto md:static md:flex-row md:gap-5 p-3 md:p-0 ${isMenuOpen ? 'block' : 'hidden'}`}>
+      <div className={`md:flex md:items-start md:border-0 shadow-2xl border-t-0 border-2 gap-8 items-center flex-grow absolute top-[6.95rem] left-0  bg-[#0C3854] w-full md:w-auto md:static md:flex-row md:gap-5 p-3 md:p-0 ${isMenuOpen ? 'block' : 'hidden'}`}>
         <a href="/#hero" className="block md:inline-block">Home</a>
         <a href="/#first-section" className="block md:inline-block">Schedule</a>
         <a href="/#third-section" className="block md:inline-block">Contact</a>

@@ -107,7 +107,7 @@ export default function CreateForm() {
     return (
         <div>
             <div className="flex flex-col items-center w-screen">
-                <h2 className="md:text-3xl md:pb-12 text-xl pb-5">Check the weather before you come</h2>
+                <h2 className="md:text-3xl md:pb-12 text-xl pb-5 underline underline-offset-8 decoration-black">Check the weather before you come</h2>
                 <div className="md:justify-center screen-lg mx-auto flex overflow-x-auto max-w-full md:max-w-full md:w-screen px-4">
                     <div className="flex md:flex-wrap no-wrap md:max-w-full gap-2 justify-center pb-10">
                         {
@@ -128,7 +128,7 @@ export default function CreateForm() {
             </div>
             <form onSubmit={handleSubmit} className="w-32 md:flex md:gap-12">
                 <div className=" mb-12 flex flex-wrap justify-center md:flex gap-10 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700
-                transition ease-in-out hover:scale-110 m-3 duration-300">
+                transition ease-in-out hover:scale-[1.05] m-3 duration-300">
                     <div className="flex flex-col gap-3 items-baseline ">
                         <h2 className="flex gap-2 items-center">
                             <CalendarDays className="text-blue-500" />
@@ -161,7 +161,7 @@ export default function CreateForm() {
                     </div>
                 </div>
                 <div className="gap-3 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700
-                transition ease-in-out hover:scale-110 m-3 duration-300">
+                transition ease-in-out hover:scale-[1.05] m-3 duration-300">
                     <div className="text-center md:items-center flex justify-center flex-col">
                         <h2 className="mt-6 mb-3 flex gap-2 items-center">
                             <PencilIcon className="text-blue-500" />
