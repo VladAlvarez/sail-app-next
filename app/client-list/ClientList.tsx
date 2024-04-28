@@ -7,7 +7,7 @@ async function getClient() {
     return res.json()
 }
 
-async function deleteClient(id) {
+async function deleteClient(id:any) {
     await fetch(`http://localhost:4000/details/${id}`, {
         method: 'DELETE',
     });
@@ -27,7 +27,7 @@ export default function ClientList() {
         return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     }
 
-    const handleDelete = async (id) => {
+    const handleDelete = async (id:any) => {
         await deleteClient(id);
         setClients(clients.filter(client => client.id !== id));
     }
@@ -37,7 +37,7 @@ export default function ClientList() {
         {clients.map((client: any) => (
             <div key={client.id} className="card">
                 <p>
-                    <div className='flex flex-col content-around flex-wrap text-center p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-3
+                    <div className='flex gap-5 items-center justify-between content-around flex-wrap text-center p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-3
                     transition ease-in-out  hover:scale-105 duration-300'>
                         {client.name + ' ' +
                             client.email + ' ' +
@@ -45,7 +45,7 @@ export default function ClientList() {
                             client.body + ' ' +
                             client.time + ' ' +
                             formatDate(client.date)}
-                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleDelete(client.id)}>Delete</button>
+                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-24" onClick={() => handleDelete(client.id)}>Delete</button>
                     </div>
                 </p>
             </div>

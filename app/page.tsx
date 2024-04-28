@@ -1,7 +1,6 @@
 "use client"
 
 import Head from "next/head";
-import Link from "next/link";
 import CreateSchedule from "./components/schedule/CreateSchedule";
 import MeetSkippers from "./components/MeetSkippers";
 import Contact from "./components/Contact"; 

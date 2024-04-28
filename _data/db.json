@@ -10,15 +10,6 @@
       "date": "2024-04-30T06:00:00.000Z"
     },
     {
-      "id": "702a",
-      "name": "Test",
-      "email": "moroni.alvarez6826@stu.mtec.edu",
-      "number": "8012340118",
-      "body": "Test email from Vlad's",
-      "time": "",
-      "date": "2024-04-26T15:30:04.935Z"
-    },
-    {
       "id": "caec",
       "name": "Cowboy b",
       "email": "moroni.alvarez6826@stu.mtec.edu",
@@ -26,6 +17,15 @@
       "body": "I wanna partttay",
       "time": "3:00 PM",
       "date": "2024-04-27T06:00:00.000Z"
+    },
+    {
+      "id": "e56f",
+      "name": "vlad",
+      "email": "moroni.v.alvarez@gmail.com",
+      "number": "65854763",
+      "body": "woooooooooooow",
+      "time": "3:00 PM",
+      "date": "2024-04-30T06:00:00.000Z"
     }
   ],
   "logs": [
@@ -58,6 +58,16 @@
       "distance": "20mi",
       "latitude": 41.12,
       "longitude": -111.3
+    },
+    {
+      "id": "d545",
+      "date": "2024-04-10",
+      "time": "3",
+      "speed": "6",
+      "avgSpeed": "3",
+      "distance": "15",
+      "latitude": 40.2717014,
+      "longitude": -111.7945649
     }
   ]
 }

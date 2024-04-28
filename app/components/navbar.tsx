@@ -50,7 +50,7 @@ export default function Navbar() {
         </svg>
       </button>
       <div className={`md:flex md:items-start md:border-0 shadow-2xl border-t-0 border-2 gap-8 items-center flex-grow absolute top-[5.75rem] left-0  bg-[#0C3854] w-full md:w-auto md:static md:flex-row md:gap-5 p-3 md:p-0 ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <a href="/" className="block md:inline-block">Home</a>
+        <a href="/#hero" className="block md:inline-block">Home</a>
         <a href="/#first-section" className="block md:inline-block">Schedule</a>
         <a href="/#third-section" className="block md:inline-block">Contact</a>
         <a href="/#fourth-section" className="block md:inline-block">Captain&apos;s Log</a>                        

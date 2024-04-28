@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Hero() {
     return (
-        <section className="">
+        <section id="hero">
             <div className="flex justify-center text-white">
               <h2 className="mt-40">LINDON MARINA</h2>
             </div>
