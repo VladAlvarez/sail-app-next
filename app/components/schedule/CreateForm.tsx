@@ -197,7 +197,7 @@ export default function CreateForm() {
                             />
                         </label>
                         <label>
-                            <span>Please share anything that will help prepare four our meeting:</span>
+                            <span>Please share anything that will help prepare for our meeting:</span>
                             <textarea
                                 required
                                 onChange={(e) => setBody(e.target.value)}

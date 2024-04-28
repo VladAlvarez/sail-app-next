@@ -6,14 +6,11 @@ import Logo from './sail-logo.png';
 import { AuthContext } from '../contexts/authContext';
 import React, { useContext, useState } from "react";
 import { doSignOut } from '../firebase/firebase';
-import { useRouter } from 'next/navigation';
-
+import router from 'next/router';
 
 export default function Navbar() {
   const { currentUser, userLoggedIn } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
-
 
   const handleLogout = async () => {
     try {
@@ -56,7 +53,7 @@ export default function Navbar() {
         <a href="/#fourth-section" className="block md:inline-block">Captain&apos;s Log</a>                        
         {userLoggedIn ? (
           <>
-            <Link href="/client-list" className="block md:inline-block">Client List</Link>
+            <a href="/client-list" className="block md:inline-block">Client List</a>
             <div className="user-info flex gap-5 flex-grow justify-between mr-5">
               <button className='btn-primary' onClick={handleLogout}>Logout</button>
               <p>Hello, {currentUser?.email}</p>
