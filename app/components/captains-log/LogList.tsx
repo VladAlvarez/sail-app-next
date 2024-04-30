@@ -3,7 +3,7 @@ import React from "react";
 export default function LogList({ logs, handleDelete }: any) {
     return (
         <section>
-            <div className='mb-20 overflow-x-auto w-screen flex items-center px-12 p-8'>
+            <div className='mb-20 overflow-x-auto w-screen flex md:justify-center items-center px-12 p-8'>
                 {logs.length > 0 ? (
                     <table className="bg-white text-black text-xl gap-5 rounded-lg">
                         <thead>
