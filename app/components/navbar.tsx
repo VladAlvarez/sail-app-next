@@ -29,7 +29,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className='bg-[#0C3854] fixed w-full p-2 z-10 md:border-b-2 border-2 shadow-lg flex justify-between md:justify-start '>
+    <nav className='bg-[#0C3854] fixed w-screen p-2 z-10 md:border-b-2 border-2 shadow-lg flex justify-between md:justify-start '>
       <Image
       className='rounded-xl p-1 bg-[rgb(215,250,251)] object-fill w-16 h-24'
         src={Logo}

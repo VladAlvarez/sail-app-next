@@ -106,7 +106,7 @@ export default function CreateForm() {
 
     return (
         <div>
-            <div className="flex flex-col items-center w-screen">
+            <div className="flex flex-col items-center w-full">
                 <h2 className="md:text-3xl md:pb-12 text-xl pb-5 underline underline-offset-8 decoration-black">Check the weather before you come</h2>
                 <div className="md:justify-center screen-lg mx-auto flex overflow-x-auto max-w-full md:max-w-full md:w-screen px-4">
                     <div className="flex md:flex-wrap no-wrap md:max-w-full gap-2 justify-center pb-10">
