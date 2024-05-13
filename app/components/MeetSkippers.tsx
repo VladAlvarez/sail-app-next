@@ -12,7 +12,7 @@ export default function MeetSkippers() {
                 </div>
                 <div className="flex justify-center items-center flex-wrap md:flex-nowrap md:w-3/5 gap-4">
                     <div className="md:w-1/3 w-64 relative mt-5 md:mt-0" style={{height: "200px"}}>
-                        <div className="absolute inset-0 shadow-inner border-4 shadow-2xl  transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300">
+                        <div className="absolute inset-0 shadow-inner border-4 shadow-2xl  transition ease-in-out  hover:scale-[1.05] m-3 duration-300">
                             <Image
                                 src="/captainOne.jpg"
                                 layout="fill"
@@ -22,7 +22,7 @@ export default function MeetSkippers() {
                         </div>
                     </div>
                     <div className="md:w-1/3 w-64 relative" style={{height: "200px"}}>
-                        <div className="absolute inset-0 shadow-inner border-4 shadow-2xl  transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300">
+                        <div className="absolute inset-0 shadow-inner border-4 shadow-2xl  transition ease-in-out hover:scale-[1.05] m-3 duration-300">
                             <Image
                                 src="/randoPirate.jpg"
                                 layout="fill"
@@ -32,7 +32,7 @@ export default function MeetSkippers() {
                         </div>
                     </div>
                     <div className="md:w-1/3 w-64 relative" style={{height: "200px"}}>
-                        <div className="absolute inset-0 shadow-inner border-4 shadow-2xl  transition ease-in-out hover:-translate-y-1 hover:scale-110 m-3 duration-300">
+                        <div className="absolute inset-0 shadow-inner border-4 shadow-2xl  transition ease-in-out hover:-translate-y-1 hover:scale-[1.05] m-3 duration-300">
                             <Image
                                 src="/femalePirate.jpg"
                                 layout="fill"

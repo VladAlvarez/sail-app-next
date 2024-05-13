@@ -21,64 +21,14 @@
   ],
   "logs": [
     {
-      "id": "3f40",
-      "date": "2024-05-01",
-      "time": "dsafs",
-      "speed": "dsaf",
-      "avgSpeed": "dsaf",
-      "distance": "dsfads",
-      "latitude": 7,
-      "longitude": 7
-    },
-    {
-      "id": "fe82",
+      "id": "6c70",
       "date": "2024-04-30",
-      "time": "wqfew",
-      "speed": "wdqfew",
-      "avgSpeed": "wqre",
-      "distance": "wqfew",
-      "latitude": 54,
-      "longitude": 5465
-    },
-    {
-      "id": "f7d0",
-      "date": "2024-04-30",
-      "time": "wqfew",
-      "speed": "wdqfew",
-      "avgSpeed": "wqre",
-      "distance": "wqfew",
-      "latitude": 41,
+      "time": "2hrs",
+      "speed": "30mph",
+      "avgSpeed": "25mph",
+      "distance": "4miles",
+      "latitude": 40,
       "longitude": -111
-    },
-    {
-      "id": "ee25",
-      "date": "2024-04-17",
-      "time": "5hrs",
-      "speed": "5mph",
-      "avgSpeed": "3.4mph",
-      "distance": "15mi",
-      "latitude": 41,
-      "longitude": -111
-    },
-    {
-      "id": "4d25",
-      "date": "2024-04-16",
-      "time": "6hrs",
-      "speed": "6.5mph",
-      "avgSpeed": "2.2mph",
-      "distance": "20mi",
-      "latitude": 41.12,
-      "longitude": -111.3
-    },
-    {
-      "id": "d545",
-      "date": "2024-04-10",
-      "time": "3",
-      "speed": "6",
-      "avgSpeed": "3",
-      "distance": "15",
-      "latitude": 40.2717014,
-      "longitude": -111.7945649
     }
   ]
 }

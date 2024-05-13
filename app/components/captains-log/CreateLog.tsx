@@ -39,7 +39,7 @@ export default function CreateLog({onSubmit}:any) {
     }
     
     return (
-        <form onSubmit={handleSubmit} className="md:flex flex-wrap md:gap-3 items-center mt-5 grid">
+        <form onSubmit={handleSubmit} className="md:flex flex-wrap md:gap-3 items-center mt-5 grid justify-center">
         <label>
             <input
                 className="md:w-32 w-64 text-black h-8"
@@ -108,7 +108,7 @@ export default function CreateLog({onSubmit}:any) {
             />
         </label>
         <button
-        className="text-white font-bold h-[44px]text-center p-2 bg-blue-500 rounded-lg w-10 text-center "
+        className="text-white font-bold h-[44px] justify-center p-2 bg-blue-500 rounded-lg w-10 text-center "
         disabled={isAdding}
         >
             {isAdding && <span>Adding...</span>}
