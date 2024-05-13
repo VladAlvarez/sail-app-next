@@ -14,7 +14,7 @@ async function deleteClient(id:any) {
 }
 
 export default function ClientList() {
-    const [clients, setClients] = useState([]);
+    const [clients, setClients] = useState<any[]>([]);
 
     useEffect(() => {
         (async () => {

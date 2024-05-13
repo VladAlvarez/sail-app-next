@@ -2,7 +2,7 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import axios from 'axios';
 
-const StateContext = createContext();
+const StateContext = createContext('light');
 
 export interface WeatherItemType {
     dt_txt: string;
@@ -14,7 +14,7 @@ export interface WeatherItemType {
     temperature: number;
   };
 
-export const StateContextProvider = ({ children }) => {
+export const StateContextProvider = ({ children }:any) => {
     const [weather, setWeather] = useState<WeatherItemType[]>([]);
     const [values, setValues] = useState([]);
     const [place, setPlace] = useState('Lindon');
