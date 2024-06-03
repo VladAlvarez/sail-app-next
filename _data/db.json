@@ -1,15 +1,6 @@
 {
   "details": [
     {
-      "id": "936b",
-      "name": "Kye",
-      "email": "KyeClevenger@gmail.com",
-      "number": "3853136883",
-      "body": "Yuhhhh",
-      "time": "2:00 PM",
-      "date": "2024-04-30T06:00:00.000Z"
-    },
-    {
       "id": "9d14",
       "name": "vlad",
       "email": "moroni.alvarez6826@stu.mtec.edu",
@@ -17,6 +8,15 @@
       "body": "vdsvvgdszb",
       "time": "1:30 PM",
       "date": "2024-04-30T06:00:00.000Z"
+    },
+    {
+      "id": "5ad5",
+      "name": "Ivan",
+      "email": "moroni.v.alvarez@gmail.com",
+      "number": "801-234-0118",
+      "body": "partaatay",
+      "time": "1:30 PM",
+      "date": "2024-05-31T06:00:00.000Z"
     }
   ],
   "logs": [

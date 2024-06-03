@@ -2,24 +2,24 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Calendar } from "@/components/ui/calendar"
+import { Calendar } from "@/components/ui/calendar";
 import { WeatherItemType, useStateContext } from "../../Context";
-import WeatherCard from '../WeatherCard'
+import WeatherCard from '../WeatherCard';
 import { CalendarDays, Clock, PencilIcon } from "lucide-react";
 import emailjs from 'emailjs-com';
 import React from "react";
 
 export default function CreateForm() {
-    const router = useRouter()
+    const router = useRouter();
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [number, setNumber] = useState('')
-    const [body, setBody] = useState('')
-    const [isSending, setIsSending] = useState(false)
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [number, setNumber] = useState('');
+    const [body, setBody] = useState('');
+    const [isSending, setIsSending] = useState(false);
     const [timeSlot, setTimeSlot] = useState<{ time: string }[]>([]);
-    const [selectedTimeSlot, setSelectedTimeSlot] = useState('')
-    const [date, setDate] = useState<Date | undefined>(new Date())
+    const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
+    const [date, setDate] = useState<Date | undefined>(new Date());
 
     useEffect(() => {
         getTime();
@@ -30,18 +30,18 @@ export default function CreateForm() {
         for (let i = 10; i <= 12; i++) {
             timeList.push({
                 time: i + ':00 AM'
-            })
+            });
             timeList.push({
                 time: i + ':30 AM'
-            })
+            });
         }
         for (let i = 1; i <= 6; i++) {
             timeList.push({
                 time: i + ':00 PM'
-            })
+            });
             timeList.push({
                 time: i + ':30 PM'
-            })
+            });
         }
         setTimeSlot(timeList);
     }
@@ -95,14 +95,11 @@ export default function CreateForm() {
         }
     };
 
-
-
     const isPastDay = (day: Date): boolean => {
         return day < new Date();
     }
 
     const { weather }: any = useStateContext();
-
 
     return (
         <div>
@@ -111,7 +108,7 @@ export default function CreateForm() {
                 <div className="md:justify-center screen-lg mx-auto flex overflow-x-auto max-w-full md:max-w-full md:w-screen px-4">
                     <div className="flex md:flex-wrap no-wrap md:max-w-full gap-2 justify-center pb-10">
                         {
-                            (weather).map((weatherItem: WeatherItemType, key: number) => (
+                            weather && weather.map((weatherItem: WeatherItemType, key: number) => (
                                 <WeatherCard
                                     key={key}
                                     date={weatherItem?.dt_txt}
@@ -127,8 +124,7 @@ export default function CreateForm() {
                 </div>
             </div>
             <form onSubmit={handleSubmit} className="w-32 md:flex md:gap-12">
-                <div className=" mb-12 flex flex-wrap justify-center md:flex gap-10 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700
-                transition ease-in-out hover:scale-[1.05] m-3 duration-300">
+                <div className=" mb-12 flex flex-wrap justify-center md:flex gap-10 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition ease-in-out hover:scale-[1.05] m-3 duration-300">
                     <div className="flex flex-col gap-3 items-baseline ">
                         <h2 className="flex gap-2 items-center">
                             <CalendarDays className="text-blue-500" />
@@ -160,12 +156,12 @@ export default function CreateForm() {
                         </div>
                     </div>
                 </div>
-                <div className="gap-3 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700
-                transition ease-in-out hover:scale-[1.05] m-3 duration-300">
+                <div className="gap-3 mt-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition ease-in-out hover:scale-[1.05] m-3 duration-300">
                     <div className="text-center md:items-center flex justify-center flex-col">
                         <h2 className="mt-6 mb-3 flex gap-2 items-center">
                             <PencilIcon className="text-blue-500" />
-                            ENTER DETAILS</h2>
+                            ENTER DETAILS
+                        </h2>
                         <label>
                             <span>Name:</span>
                             <input
@@ -215,6 +211,6 @@ export default function CreateForm() {
                     </div>
                 </div>
             </form>
-        </div >
-    )
+        </div>
+    );
 }
